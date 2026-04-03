@@ -1,3 +1,7 @@
 img {
     width: 50px;
 }
+
+body {
+    cursor: url("../assets/test.ico"), auto;
+}
