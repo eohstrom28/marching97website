@@ -1,0 +1,33 @@
+#logo {
+    width: 50px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1, h2, p {
+    text-align: center;
+}
+
+.exec {
+    display: flex;
+    gap: 50px;
+    justify-content: space-evenly;
+
+}
+
+.exec div {
+    max-width: 300px;
+}
+
+.exec p {
+    text-align: justify;
+}
+
+.exec-photo {
+    width: 150px;
+    align-self: center;
+}
