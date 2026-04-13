@@ -8,6 +8,28 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
+.desc {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+body {
+    background-color: #AA8A71;
+}
+
+h1, h2 {
+    color: #EDB634;
+}
+
+p {
+    color: #2C2440;
+}
+
+.exec-text {
+    background-color: #967860;
+    padding: 10px;
+    border-radius: 10%;
+}
 
 h1, h2, p {
     text-align: center;
@@ -32,17 +54,18 @@ h1, h2, p {
 }
 
 .exec p {
-    text-align: justify;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .exec-photo {
-    max-width: 150px;
     align-self: center;
     border-radius: 10%;
 }
 
 img {
-    width: 150px;
-    height: 200px;
+    width: 200px;
+    height: 250px;
     object-fit: cover;
 }
