@@ -1,5 +1,6 @@
 #logo {
     width: 50px;
+    height: auto;
 }
 
 nav {
@@ -15,12 +16,19 @@ h1, h2, p {
 .exec {
     display: flex;
     gap: 50px;
-    justify-content: space-evenly;
-
+    justify-content: space-around;
+    margin-left: 75px;
+    margin-right: 75px;
+    margin-bottom: 25px;
 }
 
 .exec div {
-    max-width: 300px;
+    flex: 2;
+}
+
+.exec .image-div {
+    flex: 1;
+    align-self: center;
 }
 
 .exec p {
@@ -28,6 +36,13 @@ h1, h2, p {
 }
 
 .exec-photo {
-    width: 150px;
+    max-width: 150px;
     align-self: center;
+    border-radius: 10%;
+}
+
+img {
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
 }
