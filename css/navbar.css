@@ -24,6 +24,10 @@ nav ul {
     color: #2C2440;
 }
 
+.current {
+    color: #EDB634;
+}
+
 nav a {
     text-decoration: none;
 }
