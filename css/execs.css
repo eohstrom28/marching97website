@@ -1,14 +1,51 @@
+@font-face {
+    font-family: 'Hammer';
+    src: url('../assets/fonts/Hammersmith.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Alex';
+    src: url('../assets/fonts/AlexBrush.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Jose';
+    src: url('../assets/fonts/Josefin.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Germania';
+    src: url(../assets/fonts/GermaniaOne-Regular.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .desc {
     margin-left: 100px;
     margin-right: 100px;
+}
+
+h1 {
+    font-family: 'Germania';
+}
+
+h2 {
+    font-family: 'Hammer';
 }
 
 h1, h2 {
     color: #EDB634;
 }
 
-p {
+main p {
     color: #2C2440;
+    font-family: 'Jose';
 }
 
 .exec-text {
