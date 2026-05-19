@@ -1,9 +1,37 @@
-body {
-    text-align: center;
+@font-face {
+    font-family: 'Hammer';
+    src: url('../assets/fonts/Hammersmith.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 
-h1, h2 {
+@font-face {
+    font-family: 'Alex';
+    src: url('../assets/fonts/AlexBrush.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Jose';
+    src: url('../assets/fonts/Josefin.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    text-align: center;
+    font-family: 'Hammer'
+}
+
+h1 {
     color: #EDB634;
+    font-family: 'Alex';
+}
+
+h2 {
+    color: #EDB634;
+    font-family: 'Hammer';
 }
 
 .director-text, .directors {
