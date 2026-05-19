@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Hammer';
+    src: url('../assets/fonts/Hammersmith.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 #logo {
     width: 50px;
     height: auto;
@@ -11,6 +18,8 @@ nav {
     height: 100%;
     width: 100%;
     padding: 10px;
+    font-family: 'Hammer';
+    font-size: large;
 }
 
 ul {
@@ -70,6 +79,7 @@ body {
     transform: translateX(-50%);
     width: 100%;
     top: 40px;
+    font-size: medium;
 }
 
 .hide-members {
