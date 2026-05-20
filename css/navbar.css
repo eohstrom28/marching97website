@@ -31,10 +31,15 @@ ul {
 }
 
 .nav-item {
-    color: #2C2440;
+    color: inherit;
+    text-decoration: inherit;
 }
 
-.current {
+.triangle {
+    text-decoration: none;
+}
+
+.current, [aria-current=page] {
     color: #EDB634;
 }
 
@@ -44,29 +49,33 @@ nav li {
 
 nav a {
     text-decoration: none;
+    display: block;
 }
 
 nav p {
     margin: 0;
 }
 
-li {
+.nav-item {
     padding: 10px;
+
+}
+
+li {
     width: 100%;
+    color: #2C2440;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #AA8A71;
-}
-
-.dropdown {
+.main-links {
     text-align: center;
 }
 
+span {
+    font-size: small;
+}
+
 .hide-about, .hide-members {
-    /* visibility: hidden; */
+    visibility: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -82,12 +91,8 @@ body {
     font-size: medium;
 }
 
-.hide-members {
-    visibility: hidden;
-}
-
 .hide-meet {
-    /* visibility: hidden; */
+    visibility: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -109,4 +114,25 @@ body {
 
 .hide-about li:last-child, .hide-members li:last-child, .hide-meet li:last-child {
     border-bottom: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #AA8A71;
+}
+
+.current:hover, .current:focus-within {
+    text-decoration: underline;
+}
+
+nav li:hover, nav li:focus-within {
+    display: block;
+    background-color: #745943;
+    color: white;
+    text-decoration: underline;
+}
+
+nav li:hover > ul, nav li:focus-within > ul {
+    visibility: visible;
 }
