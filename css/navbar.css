@@ -107,17 +107,8 @@ button {
     border-bottom: none;
 }
 
-.current:hover, .current:focus-within {
-    text-decoration: underline;
-}
-
-nav li:hover, nav li:focus-within {
-    display: block;
+/* nav li:hover, nav li:focus-within {
     background-color: #745943;
     color: white;
     text-decoration: underline;
-}
-
-nav li:hover > ul, nav li:focus-within > ul {
-    visibility: visible;
-}
+} */
