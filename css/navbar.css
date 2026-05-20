@@ -72,13 +72,12 @@ span {
     justify-content: center;
     align-items: center;
     position: absolute;
-    border: solid #4A321B;
     background-color: white;
     padding-inline-start: 0px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    top: 40px;
+    top: 42px;
     font-size: medium;
 }
 
@@ -89,7 +88,6 @@ span {
     justify-content: center;
     align-items: center;
     position: absolute;
-    border: solid #4A321B;
     background-color: white;
     padding-inline-start: 0px;
     width: 100%;
@@ -99,10 +97,10 @@ span {
 
 .hide-about li, .hide-members li {
     box-sizing: border-box;
-    border-bottom: solid #4A321B;
+    border: solid #4A321B;
 }
 
-.hide-about li:last-child, .hide-members li:last-child, .hide-meet li:last-child {
+.hide-about li:not(:last-child), .hide-members li:not(:last-child), .hide-meet li:not(:last-child) {
     border-bottom: none;
 }
 
