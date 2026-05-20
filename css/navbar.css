@@ -61,8 +61,11 @@ nav p {
     margin: 0;
 }
 
-span {
+button {
     font-size: small;
+    border: none;
+    background-color: inherit;
+    color: inherit;
 }
 
 .hide-about, .hide-members {
