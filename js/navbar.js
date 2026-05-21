@@ -50,6 +50,7 @@ const parents = document.querySelectorAll(".has-dropdown");
 let lastExpanded = null;
 let aboutOpen = false;
 let meetOpen = false;
+let lastCollapsed = null;
 
 const expand = (parent) => {
     const dropdown = parent.querySelector("ul");
@@ -62,6 +63,7 @@ const expand = (parent) => {
     dropdown.style.visibility = "visible";
     dropdown.querySelector("a", "p").focus();
     
+    // flip the expand/collapse triangle icon
     if (button.className !== "meet") {
         button.style.transform = "scaleY(-1)";
     }
@@ -87,8 +89,8 @@ const collapse = (parent) => {
     parent.dataset.expanded = "false";
     dropdown.style.visibility = "hidden";
     button.focus();
-    button.style.rotate = "0deg";
 
+    // flip the expand/collapse triangle icon back to normal
     if (button.className !== "meet") {
         button.style.transform = "scaleY(1)";
     }
@@ -98,18 +100,24 @@ const collapse = (parent) => {
 
     if (button.className === "meet") {
         meetOpen = false;
+        lastCollapsed = "meet";
     }
     else if (button.className === "about") {
         aboutOpen = false;
+        lastCollapsed = "about"
+    }
+    else {
+        lastCollapsed = "members"
     }
 
     if ((aboutOpen == false) && meetOpen) {
-        // close meet
+        // collapse Meet the Band since About has been collapsed
         let meet = document.querySelector(".has-dropdown.meet");
         collapse(meet);
     }
 
     if (aboutOpen && (meetOpen == false)) {
+        // set lastExpanded to About if About is still expanded
         lastExpanded = document.querySelector("li");
     }
 };
@@ -159,7 +167,17 @@ parents.forEach((parent) => {
             if (event.key === "Tab" && !event.shiftKey) {
                 event.preventDefault();
                 button.focus();
-                collapse(lastExpanded);
+
+                // MAKE THIS HAPPEN FOR GOING BACK TO THE BUTTON TOO
+                
+                // only close Meet dropdown after returning to its button, don't close About too
+                if (aboutOpen && lastCollapsed !== "meet") {
+                    collapse(lastExpanded);
+                }
+                // always close Members dropdown after returning to its button
+                else if (lastExpanded.classList.contains("members")) {
+                    collapse(lastExpanded);
+                }
             }
         });
     }    
