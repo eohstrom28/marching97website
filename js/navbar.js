@@ -47,14 +47,14 @@ lis.forEach((item) => {
 
 
 const parents = document.querySelectorAll(".has-dropdown");
-let currentItem = null;
+let lastExpanded = null;
 let aboutOpen = false;
 let meetOpen = false;
 
 const expand = (parent) => {
     const dropdown = parent.querySelector("ul");
     const button = parent.querySelector("button");
-    currentItem = parent;
+    lastExpanded = parent;
 
     dropdown.setAttribute("aria-hidden", "false");
     button.setAttribute("aria-expanded", "true");
@@ -80,7 +80,7 @@ const expand = (parent) => {
 const collapse = (parent) => {
     const dropdown = parent.querySelector("ul");
     const button = parent.querySelector("button");
-    currentItem = null;
+    lastExpanded = null;
 
     dropdown.setAttribute("aria-hidden", "true");
     button.setAttribute("aria-expanded", "false");
@@ -108,7 +108,17 @@ const collapse = (parent) => {
         let meet = document.querySelector(".has-dropdown.meet");
         collapse(meet);
     }
+
+    if (aboutOpen && (meetOpen == false)) {
+        lastExpanded = document.querySelector("li");
+    }
 };
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && lastExpanded) {
+        collapse(lastExpanded);
+    }
+});
 
 parents.forEach((parent) => {
     const button = parent.querySelector("button");
@@ -149,7 +159,8 @@ parents.forEach((parent) => {
             if (event.key === "Tab" && !event.shiftKey) {
                 event.preventDefault();
                 button.focus();
+                collapse(lastExpanded);
             }
         });
-    }
+    }    
 });
