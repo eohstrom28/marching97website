@@ -2,14 +2,17 @@ const lis = document.querySelectorAll("li");
 
 const highlight = (item) => {
     item.style.backgroundColor = "#745943";
-    item.style.color = "white";
     item.style.textDecoration = "underline";
+
+    if (!(item.classList.contains("current"))) {
+        item.style.color = "white";
+    }
 };
 
 const unhighlight = (item) => {
     item.style.backgroundColor = "white";
     item.style.textDecoration = "none";
-    if (item.className !== "current") {
+    if (!(item.classList.contains("current"))) {
         item.style.color = "#2C2440";
     }
 }
@@ -22,18 +25,6 @@ lis.forEach((item) => {
     item.addEventListener("mouseleave", () => {
         unhighlight(item);
     });
-
-    let paras = item.querySelectorAll("p");
-    paras.forEach((para) => {
-        para.addEventListener("focus", () => {
-            highlight(item);
-        });
-
-        para.addEventListener("blur", () => {
-            unhighlight(item);
-        });
-    });
-
     let links = item.querySelectorAll("a");
     links.forEach((link) => {
         link.addEventListener("focus", () => {
@@ -42,7 +33,17 @@ lis.forEach((item) => {
         link.addEventListener("blur", () => {
             unhighlight(item);
         })
-    })
+    });
+
+    let buttons = item.querySelectorAll("button");
+    buttons.forEach((button) => {
+        button.addEventListener("focus", () => {
+            highlight(button.parentElement);
+        })
+        button.addEventListener("blur", (event) => {
+            unhighlight(button.parentElement);
+        })
+    });
 });
 
 
