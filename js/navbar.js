@@ -2,6 +2,8 @@ const lis = document.querySelectorAll("li");
 
 const highlight = (item) => {
     item.style.backgroundColor = "#745943";
+
+    // FIX: make only a's underlined, not p's
     item.style.textDecoration = "underline";
 
     if (!(item.classList.contains("current"))) {
@@ -25,6 +27,7 @@ lis.forEach((item) => {
     item.addEventListener("mouseleave", () => {
         unhighlight(item);
     });
+    
     let links = item.querySelectorAll("a");
     links.forEach((link) => {
         link.addEventListener("focus", () => {
@@ -83,7 +86,7 @@ const expand = (parent) => {
 const collapse = (parent) => {
     const dropdown = parent.querySelector("ul");
     const button = parent.querySelector("button");
-    lastExpanded = null;
+    let lastExpanded = null;
 
     dropdown.setAttribute("aria-hidden", "true");
     button.setAttribute("aria-expanded", "false");
@@ -161,7 +164,7 @@ parents.forEach((parent) => {
         }
     });
 
-    const subMenuTabs = parent.querySelectorAll("ul a", "ul button");
+    const subMenuTabs = parent.querySelectorAll("ul a");
     if (subMenuTabs.length) {
         const lastTab = subMenuTabs[subMenuTabs.length - 1];
         lastTab.addEventListener("keydown", (event) => {
@@ -169,14 +172,14 @@ parents.forEach((parent) => {
                 event.preventDefault();
                 button.focus();
 
-                // MAKE THIS HAPPEN FOR GOING BACK TO THE BUTTON TOO
+                // FIX: make this happen for going back to the button too
                 
                 // only close Meet dropdown after returning to its button, don't close About too
                 if (aboutOpen && lastCollapsed !== "meet") {
                     collapse(lastExpanded);
                 }
-                // always close Members dropdown after returning to its button
-                else if (lastExpanded.classList.contains("members")) {
+                // always close Members and Meet the Band dropdowns after returning to their buttons
+                else if (lastExpanded.classList.contains("members") || lastExpanded.classList.contains("meet")) {
                     collapse(lastExpanded);
                 }
             }
