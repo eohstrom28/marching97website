@@ -1,5 +1,4 @@
 const lis = document.querySelectorAll("li");
-let prevHighlight = null;
 
 const highlight = (item) => {
     item.style.backgroundColor = "#745943";
@@ -21,7 +20,6 @@ lis.forEach((item) => {
     });
 
     item.addEventListener("mouseleave", () => {
-        prevHighlight = item;
         unhighlight(item);
     });
 
@@ -32,7 +30,6 @@ lis.forEach((item) => {
         });
 
         para.addEventListener("blur", () => {
-            prevHighlight = item;
             unhighlight(item);
         });
     });
@@ -51,6 +48,8 @@ lis.forEach((item) => {
 
 const parents = document.querySelectorAll(".has-dropdown");
 let currentItem = null;
+let aboutOpen = false;
+let meetOpen = false;
 
 const expand = (parent) => {
     const dropdown = parent.querySelector("ul");
@@ -68,6 +67,13 @@ const expand = (parent) => {
     }
     else {
         button.style.transform = "scaleX(-1)";
+    }
+
+    if (button.className === "meet") {
+        meetOpen = true;
+    }
+    else if (button.className === "about") {
+        aboutOpen = true;
     }
 };
 
@@ -88,6 +94,19 @@ const collapse = (parent) => {
     }
     else {
         button.style.transform = "scaleX(1)";
+    }
+
+    if (button.className === "meet") {
+        meetOpen = false;
+    }
+    else if (button.className === "about") {
+        aboutOpen = false;
+    }
+
+    if ((aboutOpen == false) && meetOpen) {
+        // close meet
+        let meet = document.querySelector(".has-dropdown.meet");
+        collapse(meet);
     }
 };
 
