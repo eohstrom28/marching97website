@@ -177,6 +177,12 @@ document.addEventListener("keydown", (event) => {
         if (!event.shiftKey && focusedEl === lastFocusableEl) {
             event.preventDefault();
             collapse(lastExpanded);
+
+            if (aboutOpen && (meetOpen == false)) {
+                // set lastExpanded to About if About is still expanded
+                lastExpanded = document.querySelector("li.has-dropdown.about");
+            }
+
             return;
         }
 
@@ -189,6 +195,7 @@ document.addEventListener("keydown", (event) => {
                 // set lastExpanded to About if About is still expanded
                 lastExpanded = document.querySelector("li.has-dropdown.about");
             }
+
             return;
         }
     }
