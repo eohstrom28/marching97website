@@ -3,7 +3,6 @@ const lis = document.querySelectorAll("li");
 const highlight = (item) => {
     item.style.backgroundColor = "#745943";
 
-    // FIX: make only a's underlined, not p's
     item.style.textDecoration = "underline";
 
     if (!(item.classList.contains("current"))) {
@@ -154,6 +153,10 @@ document.addEventListener("keydown", (event) => {
         if (event.shiftKey && focusedEl === firstFocusableEl) {
             event.preventDefault();
             collapse(lastExpanded);
+            if (aboutOpen && (meetOpen == false)) {
+                // set lastExpanded to About if About is still expanded
+                lastExpanded = document.querySelector("li.has-dropdown.about");
+            }
             return;
         }
     }
