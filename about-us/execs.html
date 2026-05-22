@@ -5,42 +5,43 @@
 		<link rel="stylesheet" href="../css/navbar.css">
 		<link rel="stylesheet" href="../css/execs.css">
 	</head>
+	
 	<body>
 		<nav>
 			<a href="../index.html"><img src="../assets/small_logo_modern.png" alt="marching 97 logo" id="logo"></a>
-			<ul class="dropdown">
-				<li>
-					<p class="current">About Us</p>
-					<ul class="hide-about">
-						<li><a href="" class="nav-item">History</a></li>
-						<li><p class="current nav-item">Meet the Band</p>
-							<ul class="hide-meet">
-							<li><a href="./execs.html" class="current nav-item">Executive Board</a></li>
-							<li><a href="./director.html" class="nav-item">Director</a></li>
-							<li><a href="" class="nav-item">Rank 1</a></li>
-							<li><a href="" class="nav-item">Rank 2</a></li>
-							<li><a href="" class="nav-item">Rank 3/12</a></li>
-							<li><a href="" class="nav-item">Rank 4</a></li>
-							<li><a href="" class="nav-item">Rank 5</a></li>
-							<li><a href="" class="nav-item">Rank 6/9</a></li>
-							<li><a href="" class="nav-item">Rank 7</a></li>
-							<li><a href="" class="nav-item">Rank 8</a></li>
-							<li><a href="" class="nav-item">Rank 10</a></li>
-							<li><a href="" class="nav-item">Rank 11</a></li>
-							<li><a href="" class="nav-item">Rank 13</a></li>
-						</ul>
+			<ul>
+				<li class="has-dropdown about">
+					<p class="current nav-item" tabindex="0">About Us<button class="about" aria-label="submenu of about us" aria-expanded="false">&#9660</button></p>
+					<ul class="hide-about" aria-hidden="true">
+						<li><a href="./history.html" class="nav-item">History</a></li>
+						<li class="has-dropdown meet"><p class="current nav-item" tabindex="0">Meet the Band<button class="meet" aria-label="submenu of meet the band" aria-expanded="false">&#9654</button></p>
+							<ul class="hide-meet" aria-hidden="true">
+								<li><a href="./execs.html" class="nav-item" aria-current="page">Executive Board</a></li>
+								<li><a href="./director.html" class="nav-item">Director</a></li>
+								<li><a href="./ranks/rank1.html" class="nav-item">Rank 1</a></li>
+								<li><a href="./ranks/rank2.html" class="nav-item">Rank 2</a></li>
+								<li><a href="./ranks/rank312.html" class="nav-item">Rank 3/12</a></li>
+								<li><a href="./ranks/rank4.html" class="nav-item">Rank 4</a></li>
+								<li><a href="./ranks/rank5.html" class="nav-item">Rank 5</a></li>
+								<li><a href="./ranks/rank69.html" class="nav-item">Rank 6/9</a></li>
+								<li><a href="./ranks/rank7.html" class="nav-item">Rank 7</a></li>
+								<li><a href="./ranks/rank8.html" class="nav-item">Rank 8</a></li>
+								<li><a href="./ranks/rank10.html" class="nav-item">Rank 10</a></li>
+								<li><a href="./ranks/rank11.html" class="nav-item">Rank 11</a></li>
+								<li><a href="./ranks/rank13.html" class="nav-item">Rank 13</a></li>
+							</ul>
 						</li>
 					</ul>
 				</li>
-				<li>
-					<p class="nav-item members">Members</p>
-					<ul class="hide-members">
-						<li><a href="" class="nav-item">Schedule</a></li>
-						<li><a href="../members.html" class="nav-item">Documents</a></li>
+				<li class="has-dropdown members">
+					<p class="nav-item members" tabindex="0">Members<button class="members" aria-label="submenu of members" aria-expanded="false">&#9660</button></p>
+					<ul class="hide-members" aria-hidden="true">
+						<li><a href="../members/schedule.html" class="nav-item">Schedule</a></li>
+						<li><a href="../members/documents.html" class="nav-item">Documents</a></li>
 					</ul>
 				</li>
-				<li><a href="" class="nav-item">Media</a></li>
-				<li><a href="" class="nav-item">Contact Us</a></li>
+				<li><a href="../media.html" class="nav-item">Media</a></li>
+				<li><a href="../contact.html" class="nav-item">Contact Us</a></li>
 				<li><a href="../join.html" class="nav-item">Join!</a></li>
 			</ul>
 		</nav>
@@ -180,14 +181,15 @@
 
 			<section class="exec">
 				<div class="image-div">
-					<img src="../assets/exec-photos/Mia_Emery_Toots.jpg" alt="Equipment Manager Mia Emery" class="exec-photo">
+					<img src="../assets/exec-photos/Andrew_Boyle_Toots.jpg" alt="Equipment Manager Andrew Boyle" class="exec-photo">
 				</div>
 				<div class="exec-text">
-					<h2>Mia Emery</h2>
-					<p>Mia Emery '29 is a sophomore from Franklinville, NJ, majoring in Population Health. Mia plays the
-						alto sax in Rank 7. She also plays in Wind Ensemble and Symphonic Band. In her spare time, Mia can be
-						found working on musicals, baking, reading, and enjoying a bowl of soup. A fun fact about Mia is that
-						she is a first generation student and has almost passed out playing our stand tune Montero!</p>
+					<h2>Andrew Boyle</h2>
+					<p>Andrew Boyle '29 is a sophomore from Moorestown, NJ, majoring in International Relations. Andrew plays
+						Trombone in Rank 1. He also plays in some LU Jazz Combos and Big Band. He also is a member of bridge
+						club, birding club, and urban planning club. In his free time he can be found biking, practicing
+						photography, playing video games, building legos, or enjoying some fried rice. A fun fact about Andrew
+						is that he is a sailing instructor!</p>
 				</div>
 				<div class="exec-text">
 					<h2>The Equipment Managers (Toots)</h2>
@@ -200,15 +202,14 @@
 			</section>
 			<section class="exec">
 				<div class="image-div">
-					<img src="../assets/exec-photos/Andrew_Boyle_Toots.jpg" alt="Equipment Manager Andrew Boyle" class="exec-photo">
+					<img src="../assets/exec-photos/Mia_Emery_Toots.jpg" alt="Equipment Manager Mia Emery" class="exec-photo">
 				</div>
 				<div class="exec-text">
-					<h2>Andrew Boyle</h2>
-					<p>Andrew Boyle '29 is a sophomore from Moorestown, NJ, majoring in International Relations. Andrew plays
-						Trombone in Rank 1. He also plays in some LU Jazz Combos and Big Band. He also is a member of bridge
-						club, birding club, and urban planning club. In his free time he can be found biking, practicing
-						photography, playing video games, building legos, or enjoying some fried rice. A fun fact about Andrew
-						is that he is a sailing instructor!</p>
+					<h2>Mia Emery</h2>
+					<p>Mia Emery '29 is a sophomore from Franklinville, NJ, majoring in Population Health. Mia plays the
+						alto sax in Rank 7. She also plays in Wind Ensemble and Symphonic Band. In her spare time, Mia can be
+						found working on musicals, baking, reading, and enjoying a bowl of soup. A fun fact about Mia is that
+						she is a first-generation student and has almost passed out playing our stand tune Montero!</p>
 				</div>
 				<div>
 					<!-- This div is intentionally left blank to put the second toot's info in line with the first one's -->
@@ -318,4 +319,5 @@
 			</section>
 		</main>
 	</body>
+	<script src="../js/navbar.js"></script>
 </html>

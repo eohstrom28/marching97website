@@ -5,9 +5,10 @@
     font-style: normal;
 }
 
-#logo {
-    width: 50px;
-    height: auto;
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #AA8A71;
 }
 
 nav {
@@ -22,78 +23,74 @@ nav {
     font-size: large;
 }
 
+#logo {
+    width: 50px;
+    height: auto;
+}
+
 ul {
     display: flex;
     flex: 1;
     justify-content: center;
     align-items: center;
     list-style-type: none;
+    text-align: center;
 }
 
 .nav-item {
-    color: #2C2440;
+    color: inherit;
+    text-decoration: inherit;
+    padding: 10px;
 }
 
-.current {
+.current, [aria-current=page] {
     color: #EDB634;
 }
 
-nav li {
+li {
     position: relative;
+    width: 100%;
+    color: #2C2440;
 }
 
-nav a {
-    text-decoration: none;
+a {
+    display: block;
 }
 
 nav p {
     margin: 0;
 }
 
-li {
-    padding: 10px;
-    width: 100%;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #AA8A71;
-}
-
-.dropdown {
-    text-align: center;
+button {
+    font-size: small;
+    border: none;
+    background-color: inherit;
+    color: inherit;
 }
 
 .hide-about, .hide-members {
-    /* visibility: hidden; */
+    visibility: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: absolute;
-    border: solid #4A321B;
     background-color: white;
     padding-inline-start: 0px;
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
-    top: 40px;
+    top: 42px;
     font-size: medium;
 }
 
-.hide-members {
-    visibility: hidden;
-}
-
 .hide-meet {
-    /* visibility: hidden; */
+    visibility: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: absolute;
-    border: solid #4A321B;
     background-color: white;
     padding-inline-start: 0px;
     width: 100%;
@@ -101,12 +98,17 @@ body {
     left: 100%;
 }
 
-
 .hide-about li, .hide-members li {
     box-sizing: border-box;
-    border-bottom: solid #4A321B;
+    border: solid #4A321B;
 }
 
-.hide-about li:last-child, .hide-members li:last-child, .hide-meet li:last-child {
+.hide-about li:not(:last-child), .hide-members li:not(:last-child), .hide-meet li:not(:last-child) {
     border-bottom: none;
 }
+
+/* nav li:hover, nav li:focus-within {
+    background-color: #745943;
+    color: white;
+    text-decoration: underline;
+} */
