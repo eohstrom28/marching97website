@@ -137,6 +137,7 @@ const collapse = (parent) => {
         lastCollapsed = "members"
     }
 
+    // necessary if using both keyboard and mouse
     if ((aboutOpen == false) && meetOpen) {
         // collapse Meet the Band since About has been collapsed (sub-dropdown shouldn't remain open)
         let meet = document.querySelector(".has-dropdown.meet");
@@ -149,9 +150,15 @@ const collapse = (parent) => {
     }
 };
 
+// edit to be event listener for navbar only?
 document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && lastExpanded) {
         collapse(lastExpanded);
+
+        if (aboutOpen && (meetOpen == false)) {
+            // set lastExpanded to About if About is still expanded
+            lastExpanded = document.querySelector("li.has-dropdown.about");
+        }
     }
 
     if (event.key === "Tab") {        
