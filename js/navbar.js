@@ -88,11 +88,11 @@ const collapse = (parent) => {
     const button = parent.querySelector("button");
     let lastExpanded = null;
 
+    button.focus();
     dropdown.setAttribute("aria-hidden", "true");
     button.setAttribute("aria-expanded", "false");
     parent.dataset.expanded = "false";
     dropdown.style.visibility = "hidden";
-    button.focus();
 
     // flip the expand/collapse triangle icon back to normal
     if (button.className !== "meet") {
@@ -122,13 +122,40 @@ const collapse = (parent) => {
 
     if (aboutOpen && (meetOpen == false)) {
         // set lastExpanded to About if About is still expanded
-        lastExpanded = document.querySelector("li");
+        lastExpanded = document.querySelector("li.has-dropdown.about");
     }
 };
 
 document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && lastExpanded) {
         collapse(lastExpanded);
+    }
+
+    if (event.key === "Tab") {        
+        if (!lastExpanded) {
+            return;
+        }
+
+        const dropdown = lastExpanded.querySelector("ul");
+        const focusedEl = lastExpanded.querySelector(":focus");
+        const firstFocusableEl = lastExpanded.querySelector("ul li a");
+        let lastFocusableEl = dropdown.lastElementChild.querySelector("a");
+
+        if (lastExpanded.classList.contains("about")) {
+            lastFocusableEl = dropdown.querySelector("button.meet");
+        }
+
+        if (!event.shiftKey && focusedEl === lastFocusableEl) {
+            event.preventDefault();
+            collapse(lastExpanded);
+            return;
+        }
+
+        if (event.shiftKey && focusedEl === firstFocusableEl) {
+            event.preventDefault();
+            collapse(lastExpanded);
+            return;
+        }
     }
 });
 
@@ -164,24 +191,18 @@ parents.forEach((parent) => {
         }
     });
 
-    const subMenuTabs = parent.querySelectorAll("ul a");
+    const subMenuTabs = parent.querySelectorAll("ul a, ul p button");
     if (subMenuTabs.length) {
-        const lastTab = subMenuTabs[subMenuTabs.length - 1];
+        let lastTab = subMenuTabs[subMenuTabs.length - 1];
+
+        // if we're in the About dropdown, lastTab should be the Meet the Band button, not Rank 13
+        if (parent.classList.contains("about")) {
+            lastTab = document.querySelector("button.meet");
+        }
+
         lastTab.addEventListener("keydown", (event) => {
             if (event.key === "Tab" && !event.shiftKey) {
                 event.preventDefault();
-                button.focus();
-
-                // FIX: make this happen for going back to the button too
-                
-                // only close Meet dropdown after returning to its button, don't close About too
-                if (aboutOpen && lastCollapsed !== "meet") {
-                    collapse(lastExpanded);
-                }
-                // always close Members and Meet the Band dropdowns after returning to their buttons
-                else if (lastExpanded.classList.contains("members") || lastExpanded.classList.contains("meet")) {
-                    collapse(lastExpanded);
-                }
             }
         });
     }    
