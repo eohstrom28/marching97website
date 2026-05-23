@@ -14,12 +14,19 @@ The Marching 97 website is the best website east of all points west. This is fac
 ## Project Structure
 
 marching97website/
+
 │
+
 ├── about-us/                    # Explain
+
 ├── assets/                      # Explain
+
 ├── css/                         # Explain
+
 ├── js/                          # Explain
+
 ├── members/                     # Explain
+
 └── README.md
 
 ## Deployment & Branch shit
@@ -33,4 +40,4 @@ marching97website/
     * switch branch with: git switch branch_name
     * pull most recent update from branch with: git pull
     * merge on git
-        * if there'a a flop, fix it
+        * if there'a a flop, fix it pls
