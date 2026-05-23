@@ -2,14 +2,16 @@
 
 ## Project Overview
 
-The Marching 97 website is the best website east of all points west. This is facts!
+The Marching 97 website is the best website east of all points west.
 
 ## Contacts
 
 * [Emile Ohstrom](mailto:emo328@lehigh.edu)
-* [Mailei Whatever](mailto:mrs327@lehigh.edu)
+* [Mailei Schechterly](mailto:mrs327@lehigh.edu)
 * [Mia Emery](mailto:mee229@lehigh.edu)
 * [Oliver Krejbich](mailto:olk228@lehigh.edu)
+* [Alex Margulies](mailto:alm226@lehigh.edu)
+* [Emily Forlizzi](mailto:emf229@lehigh.edu)
 
 ## Project Structure
 
@@ -29,15 +31,15 @@ marching97website/
 
 └── README.md
 
-## Deployment & Branch shit
+## Deployment & Branches
 
 * git add .
 * git commit -m "add your own message"
 * git push 
 
-* play on your own branch
-    * make your own branch with: git checkout -b new_branch_name
-    * switch branch with: git switch branch_name
-    * pull most recent update from branch with: git pull
-    * merge on git
-        * if there'a a flop, fix it pls
+* Making a new branch
+    * Make your own branch with: git checkout -b new_branch_name
+    * Switch branch with: git switch branch_name
+    * Pull most recent update from branch with: git pull
+    * Merge on git
+        * If there'a a flop, fix it pls
