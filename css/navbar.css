@@ -106,9 +106,3 @@ button {
 .hide-about li:not(:last-child), .hide-members li:not(:last-child), .hide-meet li:not(:last-child) {
     border-bottom: none;
 }
-
-/* nav li:hover, nav li:focus-within {
-    background-color: #745943;
-    color: white;
-    text-decoration: underline;
-} */
