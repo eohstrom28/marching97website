@@ -1,8 +1,22 @@
+let lastKey = null;
+
+const updateLastKey = (event) => {
+    lastKey = event.key;
+}
+
+document.addEventListener("keydown", updateLastKey);
+
 const lis = document.querySelectorAll("li");
 
 const highlight = (item) => {
+    // prevent highlighting an already highlighted element
+    if (item.dataset.highlighted === "true") {
+        return;
+    }
+
     item.style.backgroundColor = "#745943";
     item.style.textDecoration = "underline";
+    item.dataset.highlighted = "true";
 
     // only recolor if it's not supposed to stay yellow because it's the current page
     if (!(item.classList.contains("current"))) {
@@ -11,8 +25,14 @@ const highlight = (item) => {
 };
 
 const unhighlight = (item) => {
+    // prevent unhighlighting an already unhighlighted element
+    if (item.dataset.highlighted === "false") {
+        return;
+    }
+
     item.style.backgroundColor = "white";
     item.style.textDecoration = "none";
+    item.dataset.highlighted = "false";
 
     // only recolor if it's not supposed to stay yellow because it's the current page
     if (!(item.classList.contains("current"))) {
@@ -48,7 +68,7 @@ lis.forEach((item) => {
         para.addEventListener("mouseenter", () => {
             highlight(para.parentElement);
         });
-
+        
         para.addEventListener("mouseleave", () => {
             unhighlight(para.parentElement);
         });
@@ -62,7 +82,10 @@ lis.forEach((item) => {
         });
 
         button.addEventListener("blur", (event) => {
-            unhighlight(button.parentElement);
+            // don't unhighlight a dropdown menu if it's opened
+            if (lastKey !== "Enter" && lastKey !== " ") {
+                unhighlight(button.parentElement);
+            }
         });
     });
 });
@@ -75,6 +98,11 @@ let aboutOpen = false;
 let meetOpen = false;
 
 const expand = (parent) => {
+    // prevent trying to expand an already expanded dropdown
+    if (parent.dataset.expanded === "true") {
+        return;
+    }
+
     const dropdown = parent.querySelector("ul");
     const button = parent.querySelector("button");
     lastExpanded = parent;
@@ -152,6 +180,8 @@ const collapse = (parent) => {
 
 // edit to be event listener for navbar only?
 document.addEventListener("keydown", (event) => {
+    updateLastKey(event);
+
     if (event.key === "Escape" && lastExpanded) {
         collapse(lastExpanded);
 
@@ -233,6 +263,8 @@ parents.forEach((parent) => {
 
     // for keyboard-accessibility
     button.addEventListener("keydown", (event) => {
+        updateLastKey(event);
+
         if (event.key === "Enter" || event.key === " ") {
             event.preventDefault();
             // expand the dropdown if it's not currently expanded
@@ -257,6 +289,8 @@ parents.forEach((parent) => {
 
         // prevent the default action if the user hits Tab on the last element (keep it from going to the next item)
         lastTab.addEventListener("keydown", (event) => {
+            updateLastKey(event);
+
             if (event.key === "Tab" && !event.shiftKey) {
                 event.preventDefault();
             }
