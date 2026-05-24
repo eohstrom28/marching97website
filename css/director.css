@@ -32,9 +32,11 @@ h1 {
 h2 {
     color: #EDB634;
     font-family: 'Hammer';
+    padding: 25px;
+    margin: 0px;
 }
 
-.director-text, .directors {
+.director-text, .past-directors {
     background-color: #967860;
     color: #2C2440;
 }
@@ -43,12 +45,15 @@ h2 {
     border-radius: 10%;
 }
 
+.current-director, .past-directors {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
 .current-director, .directors {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-left: 100px;
-    margin-right: 100px;
 }
 
 .current-director {
@@ -71,8 +76,15 @@ h2 {
     max-width: 600px;
 }
 
+.past-directors {
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
 .directors {
+    margin-top: 0px;
     padding: 25px;
+    padding-top: 0px;
 }
 
 .director-group {
