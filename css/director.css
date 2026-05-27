@@ -6,8 +6,8 @@
 }
 
 @font-face {
-    font-family: 'Alex';
-    src: url('../assets/fonts/AlexBrush.woff2') format('woff2');
+    font-family: 'Germania';
+    src: url('../assets/fonts/GermaniaOne-Regular.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -26,7 +26,7 @@ body {
 
 h1 {
     color: #EDB634;
-    font-family: 'Alex';
+    font-family: 'Germania';
 }
 
 h2 {
