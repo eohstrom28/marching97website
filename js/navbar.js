@@ -62,28 +62,26 @@ lis.forEach((item) => {
         });
     });
 
-    let paras = item.querySelectorAll("p");
-    paras.forEach((para) => {
-        // for mouse-accessibility
-        para.addEventListener("mouseenter", () => {
-            highlight(para.parentElement);
-        });
-        
-        para.addEventListener("mouseleave", () => {
-            unhighlight(para.parentElement);
-        });
-    });
-
     let buttons = item.querySelectorAll("button");
     buttons.forEach((button) => {
+        // for mouse-accessibility
+        button.addEventListener("mouseenter", () => {
+            highlight(button.parentElement);
+        });
+        
+        button.addEventListener("mouseleave", () => {
+            unhighlight(button.parentElement);
+        });
+
         // for keyboard-accessibility
         button.addEventListener("focus", () => {
             highlight(button.parentElement);
         });
 
         button.addEventListener("blur", (event) => {
+            // FIX: need a mouse equivalent + About should also stay highlighted
             // don't unhighlight a dropdown menu if it's opened
-            if (lastKey !== "Enter" && lastKey !== " ") {
+            if ((lastKey !== "Enter" && lastKey !== " ")) {
                 unhighlight(button.parentElement);
             }
         });
@@ -105,6 +103,7 @@ const expand = (parent) => {
 
     const dropdown = parent.querySelector("ul");
     const button = parent.querySelector("button");
+    const triangle = parent.querySelector("p");
     lastExpanded = parent;
 
     // show to screenreaders since dropdown was expanded
@@ -117,17 +116,17 @@ const expand = (parent) => {
     dropdown.querySelector("a", "p").focus();
     
     // flip the expand/collapse triangle icon
-    if (button.className !== "meet") {
-        button.style.transform = "scaleY(-1)";
+    if (triangle.className !== "meet") {
+        triangle.style.transform = "scaleY(-1)";
     }
     else {
-        button.style.transform = "scaleX(-1)";
+        triangle.style.transform = "scaleX(-1)";
     }
 
-    if (button.className === "meet") {
+    if (button.classList.contains("meet")) {
         meetOpen = true;
     }
-    else if (button.className === "about") {
+    else if (button.classList.contains("about")) {
         aboutOpen = true;
     }
 };
@@ -135,6 +134,7 @@ const expand = (parent) => {
 const collapse = (parent) => {
     const dropdown = parent.querySelector("ul");
     const button = parent.querySelector("button");
+    const triangle = parent.querySelector("p");
     let lastExpanded = null;
 
     button.focus();
@@ -146,18 +146,18 @@ const collapse = (parent) => {
     dropdown.style.visibility = "hidden";
 
     // flip the expand/collapse triangle icon back to normal
-    if (button.className !== "meet") {
-        button.style.transform = "scaleY(1)";
+    if (triangle.className !== "meet") {
+        triangle.style.transform = "scaleY(1)";
     }
     else {
-        button.style.transform = "scaleX(1)";
+        triangle.style.transform = "scaleX(1)";
     }
 
-    if (button.className === "meet") {
+    if (button.classList.contains("meet")) {
         meetOpen = false;
         lastCollapsed = "meet";
     }
-    else if (button.className === "about") {
+    else if (button.classList.contains("about")) {
         aboutOpen = false;
         lastCollapsed = "about"
     }

@@ -62,10 +62,19 @@ nav p {
 }
 
 button {
-    font-size: small;
     border: none;
     background-color: inherit;
     color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    width: 100%;
+}
+
+button p {
+    display: inline-block;
+    /* keeps the spaces between the button text and the triangle */
+    white-space: pre;
+    font-size: small;
 }
 
 .hide-about, .hide-members {
@@ -94,7 +103,7 @@ button {
     background-color: white;
     padding-inline-start: 0px;
     width: 100%;
-    top: -2px;
+    top: -2.67px;
     left: 100%;
 }
 
