@@ -62,10 +62,19 @@ nav p {
 }
 
 button {
-    font-size: small;
     border: none;
     background-color: inherit;
     color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    width: 100%;
+}
+
+button p {
+    display: inline-block;
+    /* keeps the spaces between the button text and the triangle */
+    white-space: pre;
+    font-size: small;
 }
 
 .hide-about, .hide-members {
@@ -94,7 +103,7 @@ button {
     background-color: white;
     padding-inline-start: 0px;
     width: 100%;
-    top: -2px;
+    top: -2.67px;
     left: 100%;
 }
 
@@ -105,4 +114,14 @@ button {
 
 .hide-about li:not(:last-child), .hide-members li:not(:last-child), .hide-meet li:not(:last-child) {
     border-bottom: none;
+}
+
+.current:hover, .current:focus-within {
+    text-decoration: underline;
+}
+
+nav li:hover, nav li:focus-within {
+    background-color: #745943;
+    color: white;
+    text-decoration: underline;
 }

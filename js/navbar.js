@@ -1,73 +1,3 @@
-const lis = document.querySelectorAll("li");
-
-const highlight = (item) => {
-    item.style.backgroundColor = "#745943";
-    item.style.textDecoration = "underline";
-
-    // only recolor if it's not supposed to stay yellow because it's the current page
-    if (!(item.classList.contains("current"))) {
-        item.style.color = "white";
-    }
-};
-
-const unhighlight = (item) => {
-    item.style.backgroundColor = "white";
-    item.style.textDecoration = "none";
-
-    // only recolor if it's not supposed to stay yellow because it's the current page
-    if (!(item.classList.contains("current"))) {
-        item.style.color = "#2C2440";
-    }
-}
-
-lis.forEach((item) => {
-    let links = item.querySelectorAll("a");
-    links.forEach((link) => {
-        // for mouse-acessibility
-        link.addEventListener("mouseenter", () => {
-            highlight(item);
-        });
-
-        link.addEventListener("mouseleave", () => {
-            unhighlight(item);
-        });
-        
-        // for keyboard-accessibility
-        link.addEventListener("focus", () => {
-            highlight(item);
-        });
-
-        link.addEventListener("blur", () => {
-            unhighlight(item);
-        });
-    });
-
-    let paras = item.querySelectorAll("p");
-    paras.forEach((para) => {
-        // for mouse-accessibility
-        para.addEventListener("mouseenter", () => {
-            highlight(para.parentElement);
-        });
-
-        para.addEventListener("mouseleave", () => {
-            unhighlight(para.parentElement);
-        });
-    });
-
-    let buttons = item.querySelectorAll("button");
-    buttons.forEach((button) => {
-        // for keyboard-accessibility
-        button.addEventListener("focus", () => {
-            highlight(button.parentElement);
-        });
-
-        button.addEventListener("blur", (event) => {
-            unhighlight(button.parentElement);
-        });
-    });
-});
-
-
 const parents = document.querySelectorAll(".has-dropdown");
 let lastExpanded = null;
 let lastCollapsed = null;
@@ -75,8 +5,14 @@ let aboutOpen = false;
 let meetOpen = false;
 
 const expand = (parent) => {
+    // prevent trying to expand an already expanded dropdown
+    if (parent.dataset.expanded === "true") {
+        return;
+    }
+
     const dropdown = parent.querySelector("ul");
     const button = parent.querySelector("button");
+    const triangle = parent.querySelector("p");
     lastExpanded = parent;
 
     // show to screenreaders since dropdown was expanded
@@ -85,21 +21,23 @@ const expand = (parent) => {
     button.setAttribute("aria-expanded", "true");
     parent.dataset.expanded = "true";
     dropdown.style.visibility = "visible";
-    // focus on the first dropdown element
-    dropdown.querySelector("a", "p").focus();
+    if (document.activeElement !== document.querySelector("body")) {
+        // focus on the first dropdown element if using keyboard
+        dropdown.querySelector("a", "p").focus();
+    }
     
     // flip the expand/collapse triangle icon
-    if (button.className !== "meet") {
-        button.style.transform = "scaleY(-1)";
+    if (triangle.className !== "meet") {
+        triangle.style.transform = "scaleY(-1)";
     }
     else {
-        button.style.transform = "scaleX(-1)";
+        triangle.style.transform = "scaleX(-1)";
     }
 
-    if (button.className === "meet") {
+    if (button.classList.contains("meet")) {
         meetOpen = true;
     }
-    else if (button.className === "about") {
+    else if (button.classList.contains("about")) {
         aboutOpen = true;
     }
 };
@@ -107,9 +45,13 @@ const expand = (parent) => {
 const collapse = (parent) => {
     const dropdown = parent.querySelector("ul");
     const button = parent.querySelector("button");
+    const triangle = parent.querySelector("p");
     let lastExpanded = null;
 
-    button.focus();
+    if (document.activeElement !== document.querySelector("body")) {
+        // focus back on the button if using keyboard
+        button.focus();
+    }
     // hide from screenreaders since we've collapsed the dropdown
     dropdown.setAttribute("aria-hidden", "true");
     // let screenreaders know we've collapsed the dropdown
@@ -118,18 +60,18 @@ const collapse = (parent) => {
     dropdown.style.visibility = "hidden";
 
     // flip the expand/collapse triangle icon back to normal
-    if (button.className !== "meet") {
-        button.style.transform = "scaleY(1)";
+    if (triangle.className !== "meet") {
+        triangle.style.transform = "scaleY(1)";
     }
     else {
-        button.style.transform = "scaleX(1)";
+        triangle.style.transform = "scaleX(1)";
     }
 
-    if (button.className === "meet") {
+    if (button.classList.contains("meet")) {
         meetOpen = false;
         lastCollapsed = "meet";
     }
-    else if (button.className === "about") {
+    else if (button.classList.contains("about")) {
         aboutOpen = false;
         lastCollapsed = "about"
     }
