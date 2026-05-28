@@ -1,94 +1,3 @@
-let lastKey = null;
-
-const updateLastKey = (event) => {
-    lastKey = event.key;
-}
-
-document.addEventListener("keydown", updateLastKey);
-
-const lis = document.querySelectorAll("li");
-
-const highlight = (item) => {
-    // prevent highlighting an already highlighted element
-    if (item.dataset.highlighted === "true") {
-        return;
-    }
-
-    item.style.backgroundColor = "#745943";
-    item.style.textDecoration = "underline";
-    item.dataset.highlighted = "true";
-
-    // only recolor if it's not supposed to stay yellow because it's the current page
-    if (!(item.classList.contains("current"))) {
-        item.style.color = "white";
-    }
-};
-
-const unhighlight = (item) => {
-    // prevent unhighlighting an already unhighlighted element
-    if (item.dataset.highlighted === "false") {
-        return;
-    }
-
-    item.style.backgroundColor = "white";
-    item.style.textDecoration = "none";
-    item.dataset.highlighted = "false";
-
-    // only recolor if it's not supposed to stay yellow because it's the current page
-    if (!(item.classList.contains("current"))) {
-        item.style.color = "#2C2440";
-    }
-}
-
-lis.forEach((item) => {
-    let links = item.querySelectorAll("a");
-    links.forEach((link) => {
-        // for mouse-acessibility
-        link.addEventListener("mouseenter", () => {
-            highlight(item);
-        });
-
-        link.addEventListener("mouseleave", () => {
-            unhighlight(item);
-        });
-        
-        // for keyboard-accessibility
-        link.addEventListener("focus", () => {
-            highlight(item);
-        });
-
-        link.addEventListener("blur", () => {
-            unhighlight(item);
-        });
-    });
-
-    let buttons = item.querySelectorAll("button");
-    buttons.forEach((button) => {
-        // for mouse-accessibility
-        button.addEventListener("mouseenter", () => {
-            highlight(button.parentElement);
-        });
-        
-        button.addEventListener("mouseleave", () => {
-            unhighlight(button.parentElement);
-        });
-
-        // for keyboard-accessibility
-        button.addEventListener("focus", () => {
-            highlight(button.parentElement);
-        });
-
-        button.addEventListener("blur", (event) => {
-            // FIX: need a mouse equivalent + About should also stay highlighted
-            // don't unhighlight a dropdown menu if it's opened
-            if ((lastKey !== "Enter" && lastKey !== " ")) {
-                unhighlight(button.parentElement);
-            }
-        });
-    });
-});
-
-
 const parents = document.querySelectorAll(".has-dropdown");
 let lastExpanded = null;
 let lastCollapsed = null;
@@ -112,8 +21,10 @@ const expand = (parent) => {
     button.setAttribute("aria-expanded", "true");
     parent.dataset.expanded = "true";
     dropdown.style.visibility = "visible";
-    // focus on the first dropdown element
-    dropdown.querySelector("a", "p").focus();
+    if (document.activeElement !== document.querySelector("body")) {
+        // focus on the first dropdown element if using keyboard
+        dropdown.querySelector("a", "p").focus();
+    }
     
     // flip the expand/collapse triangle icon
     if (triangle.className !== "meet") {
@@ -137,7 +48,10 @@ const collapse = (parent) => {
     const triangle = parent.querySelector("p");
     let lastExpanded = null;
 
-    button.focus();
+    if (document.activeElement !== document.querySelector("body")) {
+        // focus back on the button if using keyboard
+        button.focus();
+    }
     // hide from screenreaders since we've collapsed the dropdown
     dropdown.setAttribute("aria-hidden", "true");
     // let screenreaders know we've collapsed the dropdown
@@ -180,8 +94,6 @@ const collapse = (parent) => {
 
 // edit to be event listener for navbar only?
 document.addEventListener("keydown", (event) => {
-    updateLastKey(event);
-
     if (event.key === "Escape" && lastExpanded) {
         collapse(lastExpanded);
 
@@ -263,8 +175,6 @@ parents.forEach((parent) => {
 
     // for keyboard-accessibility
     button.addEventListener("keydown", (event) => {
-        updateLastKey(event);
-
         if (event.key === "Enter" || event.key === " ") {
             event.preventDefault();
             // expand the dropdown if it's not currently expanded
@@ -289,8 +199,6 @@ parents.forEach((parent) => {
 
         // prevent the default action if the user hits Tab on the last element (keep it from going to the next item)
         lastTab.addEventListener("keydown", (event) => {
-            updateLastKey(event);
-
             if (event.key === "Tab" && !event.shiftKey) {
                 event.preventDefault();
             }
