@@ -28,7 +28,7 @@ nav {
     height: auto;
 }
 
-ul {
+nav ul {
     display: flex;
     flex: 1;
     justify-content: center;
@@ -47,13 +47,13 @@ ul {
     color: #EDB634;
 }
 
-li {
+nav li {
     position: relative;
     width: 100%;
     color: #2C2440;
 }
 
-a {
+nav a {
     display: block;
 }
 
@@ -61,7 +61,7 @@ nav p {
     margin: 0;
 }
 
-button {
+nav button {
     border: none;
     background-color: inherit;
     color: inherit;
@@ -70,7 +70,7 @@ button {
     width: 100%;
 }
 
-button p {
+nav button p {
     display: inline-block;
     /* keeps the spaces between the button text and the triangle */
     white-space: pre;
