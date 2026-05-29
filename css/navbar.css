@@ -21,6 +21,7 @@ nav {
     padding: 10px;
     font-family: 'Hammer';
     font-size: large;
+    box-sizing: border-box;
 }
 
 #logo {
@@ -124,4 +125,42 @@ nav li:hover, nav li:focus-within {
     background-color: #745943;
     color: white;
     text-decoration: underline;
+}
+
+@media (width < 732px) {
+    body {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    nav {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+    }
+
+    nav ul {
+        padding-inline-start: 0;
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    nav li {
+        position: relative;
+        width: auto;
+    }
+
+    .hide-about, .hide-meet, .hide-members {
+        display: none;
+        position: static;
+        transform: translateX(0%);
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    .hide-about li, .hide-meet li, .hide-members li {
+        border: none;
+    }
 }

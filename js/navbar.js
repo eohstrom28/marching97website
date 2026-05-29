@@ -21,6 +21,12 @@ const expand = (parent) => {
     button.setAttribute("aria-expanded", "true");
     parent.dataset.expanded = "true";
     dropdown.style.visibility = "visible";
+
+    if (window.innerWidth < 732) {
+        dropdown.style.display = "flex";
+    }
+
+    // FIX: make this also work on mobile
     if (document.activeElement !== document.querySelector("body")) {
         // focus on the first dropdown element if using keyboard
         dropdown.querySelector("a", "p").focus();
@@ -58,6 +64,10 @@ const collapse = (parent) => {
     button.setAttribute("aria-expanded", "false");
     parent.dataset.expanded = "false";
     dropdown.style.visibility = "hidden";
+
+    if (window.innerWidth < 732) {
+        dropdown.style.display = "none";
+    }
 
     // flip the expand/collapse triangle icon back to normal
     if (triangle.className !== "meet") {
@@ -165,13 +175,17 @@ parents.forEach((parent) => {
         }
     });
 
-    parent.addEventListener("mouseenter", () => {
-        expand(parent);
-    });
+        parent.addEventListener("mouseenter", () => {
+            if (window.innerWidth >= 732) {
+                expand(parent);
+            }
+        });
 
-    parent.addEventListener("mouseleave", () => {
-        collapse(parent);
-    });
+        parent.addEventListener("mouseleave", () => {
+            if (window.innerWidth >= 732) {
+                collapse(parent);
+            }
+        });
 
     // for keyboard-accessibility
     button.addEventListener("keydown", (event) => {
