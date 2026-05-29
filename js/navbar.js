@@ -1,3 +1,9 @@
+let lastKey = null;
+
+document.addEventListener("keydown", (event) => {
+    lastKey = event.key;
+});
+
 const parents = document.querySelectorAll(".has-dropdown");
 let lastExpanded = null;
 let lastCollapsed = null;
@@ -28,8 +34,7 @@ const expand = (parent) => {
         dropdown.style.display = "flex";
     }
 
-    // FIX: make this also work on mobile
-    if (document.activeElement !== document.querySelector("body")) {
+    if (document.activeElement !== document.querySelector("body") && lastKey !== null) {
         // focus on the first dropdown element if using keyboard
         dropdown.querySelector("a", "p").focus();
     }
@@ -59,7 +64,7 @@ const collapse = (parent) => {
     const triangle = parent.querySelector("p");
     let lastExpanded = null;
 
-    if (document.activeElement !== document.querySelector("body")) {
+    if (document.activeElement !== document.querySelector("body" && lastKey !== null)) {
         // focus back on the button if using keyboard
         button.focus();
     }
