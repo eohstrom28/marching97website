@@ -35,7 +35,7 @@ const expand = (parent) => {
     }
     
     // flip the expand/collapse triangle icon
-    if (triangle.className !== "meet") {
+    if (!triangle.classList.contains("meet") || triangle.classList.contains("vertical")) {
         triangle.style.transform = "scaleY(-1)";
     }
     else {
@@ -76,7 +76,7 @@ const collapse = (parent) => {
     }
 
     // flip the expand/collapse triangle icon back to normal
-    if (triangle.className !== "meet") {
+    if (triangle.className !== "meet" || triangle.classList.contains("vertical")) {
         triangle.style.transform = "scaleY(1)";
     }
     else {
@@ -233,6 +233,7 @@ const meetMenu = document.querySelector(".has-dropdown.meet");
 const meetDropdown = document.querySelector(".hide-meet");
 const membersMenu = document.querySelector(".has-dropdown.members");
 const membersDropdown = document.querySelector(".hide-members");
+const meetTriangle = document.querySelector("p.meet");
 let prevWidth = window.innerWidth;
 let timer;
 
@@ -254,6 +255,15 @@ window.addEventListener("resize", () => {
 
         if (!membersOpen) {
             membersDropdown.style.display = "none";
+        }
+
+        // have the triangle point down instead of to the right
+        meetTriangle.innerHTML = " &#9660";
+        meetTriangle.classList.add("vertical");
+
+        // flip it if the dropdown is expanded
+        if (meetOpen) {
+            meetTriangle.style.transform = "scaleY(-1)";
         }
     }
     // collapse all other menus except last expanded
@@ -281,6 +291,15 @@ window.addEventListener("resize", () => {
                 collapse(meetMenu);
             }
         }
+
+        // have the triangle point to the right instead of down
+        meetTriangle.innerHTML = " &#9654 ";
+        meetTriangle.classList.remove("vertical");
+
+        // flip it if the dropdown is expanded
+        if (meetOpen) {
+            meetTriangle.style.transform = "scaleX(-1)";
+        }
     }
 
     prevWidth = window.innerWidth;
@@ -291,4 +310,8 @@ if (window.innerWidth < 732) {
     aboutDropdown.style.display = "none";
     meetDropdown.style.display = "none";
     membersDropdown.style.display = "none";
+
+    // have the triangle point down instead of to the right
+    meetTriangle.innerHTML = " &#9660";
+    meetTriangle.classList.add("vertical");
 }
