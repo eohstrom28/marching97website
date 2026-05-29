@@ -152,7 +152,6 @@ nav li:hover, nav li:focus-within {
     }
 
     .hide-about, .hide-meet, .hide-members {
-        display: none;
         position: static;
         transform: translateX(0%);
         flex-direction: row;

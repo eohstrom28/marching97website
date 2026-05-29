@@ -3,6 +3,7 @@ let lastExpanded = null;
 let lastCollapsed = null;
 let aboutOpen = false;
 let meetOpen = false;
+let membersOpen = false;
 
 const expand = (parent) => {
     // prevent trying to expand an already expanded dropdown
@@ -22,7 +23,8 @@ const expand = (parent) => {
     parent.dataset.expanded = "true";
     dropdown.style.visibility = "visible";
 
-    if (window.innerWidth < 732) {
+    // display dropdown if its display was previously set to none by smaller screen size
+    if (dropdown.style.display === "none") {
         dropdown.style.display = "flex";
     }
 
@@ -46,6 +48,9 @@ const expand = (parent) => {
     else if (button.classList.contains("about")) {
         aboutOpen = true;
     }
+    else {
+        membersOpen = true;
+    }
 };
 
 const collapse = (parent) => {
@@ -65,6 +70,7 @@ const collapse = (parent) => {
     parent.dataset.expanded = "false";
     dropdown.style.visibility = "hidden";
 
+    // don't display dropdown if screen size is small enough
     if (window.innerWidth < 732) {
         dropdown.style.display = "none";
     }
@@ -86,6 +92,7 @@ const collapse = (parent) => {
         lastCollapsed = "about"
     }
     else {
+        membersOpen = false;
         lastCollapsed = "members"
     }
 
@@ -219,3 +226,69 @@ parents.forEach((parent) => {
         });
     }    
 });
+
+const aboutMenu = document.querySelector(".has-dropdown.about");
+const aboutDropdown = document.querySelector(".hide-about");
+const meetMenu = document.querySelector(".has-dropdown.meet");
+const meetDropdown = document.querySelector(".hide-meet");
+const membersMenu = document.querySelector(".has-dropdown.members");
+const membersDropdown = document.querySelector(".hide-members");
+let prevWidth = window.innerWidth;
+let timer;
+
+window.addEventListener("resize", () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+        return;
+    }, 1000);
+
+    // keep the current dropdown open, even if the screen size shrinks
+    if (window.innerWidth < 732 && prevWidth >= 732) {
+        if (!aboutOpen) {
+            aboutDropdown.style.display = "none";
+        }
+
+        if (!meetOpen) {
+            meetDropdown.style.display = "none";
+        }
+
+        if (!membersOpen) {
+            membersDropdown.style.display = "none";
+        }
+    }
+    // collapse all other menus except last expanded
+    else if (window.innerWidth >= 732 && prevWidth < 732) {
+        if (lastExpanded === aboutMenu) {
+            if (meetOpen) {
+                collapse(meetMenu);
+            }
+
+            if (membersOpen) {
+                collapse(membersMenu);
+            }
+        }
+        else if (lastExpanded === meetMenu) {
+            if (membersOpen) {
+                collapse(membersMenu);
+            }
+        }
+        else if (lastExpanded === membersMenu) {
+            if (aboutOpen) {
+                collapse(aboutMenu);
+            }
+
+            if (meetOpen) {
+                collapse(meetMenu);
+            }
+        }
+    }
+
+    prevWidth = window.innerWidth;
+});
+
+// hide all dropdowns if the navbar is loaded vertically
+if (window.innerWidth < 732) {
+    aboutDropdown.style.display = "none";
+    meetDropdown.style.display = "none";
+    membersDropdown.style.display = "none";
+}
