@@ -62,7 +62,7 @@ nav p {
     margin: 0;
 }
 
-nav button {
+nav button:not(.hamburger) {
     border: none;
     background-color: inherit;
     color: inherit;
@@ -76,6 +76,16 @@ nav button p {
     /* keeps the spaces between the button text and the triangle */
     white-space: pre;
     font-size: small;
+}
+
+.hamburger {
+    display: none;
+    width: auto;
+    padding: 5px;
+}
+
+.hamburger img {
+    width: 25px;
 }
 
 .hide-about, .hide-members {
@@ -141,10 +151,16 @@ nav li:hover, nav li:focus-within {
         padding: 10px 0;
     }
 
+    .hamburger {
+        display: block;
+    }
+
     nav ul {
         padding-inline-start: 0;
         flex-direction: column;
         height: fit-content;
+        margin-block-start: 0;
+        margin-block-end: 0;
     }
 
     nav li {

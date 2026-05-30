@@ -64,7 +64,7 @@ const collapse = (parent) => {
     const triangle = parent.querySelector("p");
     let lastExpanded = null;
 
-    if (document.activeElement !== document.querySelector("body" && lastKey !== null)) {
+    if (document.activeElement !== document.querySelector("body") && lastKey !== null) {
         // focus back on the button if using keyboard
         button.focus();
     }
@@ -242,14 +242,57 @@ const meetTriangle = document.querySelector("p.meet");
 let prevWidth = window.innerWidth;
 let timer;
 
+const nav = document.querySelector("nav");
+const mainLinks = document.querySelector("nav ul");
+const hamburger = document.querySelector(".hamburger");
+
+const toggleHamburger = () => {
+    if (hamburger.ariaExpanded === "true") {
+        mainLinks.style.display = "none";
+        // hide links from screen readers
+        mainLinks.setAttribute("aria-hidden", "true");
+
+        nav.style.flexDirection = "row";
+        nav.style.justifyContent = "space-between";
+        nav.style.padding = "10px";
+
+        hamburger.setAttribute("aria-expanded", "false");
+        
+        // collapse all dropdowns
+        if (aboutOpen) {
+            collapse(aboutMenu);
+        }
+
+        if (meetOpen) {
+            collapse(meetMenu);
+        }
+
+        if (membersOpen) {
+            collapse(membersMenu);
+        }
+    }
+    else {
+        mainLinks.style.display = "flex";
+        // show links to screen readers
+        mainLinks.setAttribute("aria-hidden", "false");
+
+        nav.style.flexDirection = "column";
+        nav.style.justifyContent = "center";
+        nav.style.padding = "10px 0";
+
+        hamburger.setAttribute("aria-expanded", "true");
+    }
+};
+
 window.addEventListener("resize", () => {
     clearTimeout(timer);
     timer = setTimeout(() => {
         return;
     }, 1000);
 
-    // keep the current dropdown open, even if the screen size shrinks
+    // adjust navbar if screen width is changed from horizontal to vertical
     if (window.innerWidth < 732 && prevWidth >= 732) {
+        // keep the current dropdown open, even if the screen size shrinks
         if (!aboutOpen) {
             aboutDropdown.style.display = "none";
         }
@@ -270,9 +313,20 @@ window.addEventListener("resize", () => {
         if (meetOpen) {
             meetTriangle.style.transform = "scaleY(-1)";
         }
+
+        mainLinks.style.display = "flex";
+
+        nav.style.flexDirection = "column";
+        nav.style.justifyContent = "center";
+        nav.style.padding = "10px 0";
+
+        // show hamburger button to screen readers
+        hamburger.setAttribute("aria-hidden", "false");
+        hamburger.setAttribute("aria-expanded", "true");
     }
-    // collapse all other menus except last expanded
+    // adjust navbar if screen width is changed from vertical to horizontal
     else if (window.innerWidth >= 732 && prevWidth < 732) {
+        // collapse all other menus except last expanded
         if (lastExpanded === aboutMenu) {
             if (meetOpen) {
                 collapse(meetMenu);
@@ -305,6 +359,18 @@ window.addEventListener("resize", () => {
         if (meetOpen) {
             meetTriangle.style.transform = "scaleX(-1)";
         }
+
+        mainLinks.style.display = "flex";
+        // show links to screen readers
+        mainLinks.setAttribute("aria-hidden", "false");
+
+        nav.style.flexDirection = "row";
+        nav.style.justifyContent = "space-between";
+        nav.style.padding = "10px";
+
+        // hide hamburger button from screen readers
+        hamburger.setAttribute("aria-hidden", "true");
+        hamburger.setAttribute("aria-expanded", "true");
     }
 
     prevWidth = window.innerWidth;
@@ -316,7 +382,24 @@ if (window.innerWidth < 732) {
     meetDropdown.style.display = "none";
     membersDropdown.style.display = "none";
 
+    // show hamburger button to screen readers
+    hamburger.setAttribute("aria-hidden", "false");
+    hamburger.setAttribute("aria-expanded", "true");
+    // start with links hidden
+    toggleHamburger();
+
     // have the triangle point down instead of to the right
     meetTriangle.innerHTML = " &#9660";
     meetTriangle.classList.add("vertical");
 }
+
+hamburger.addEventListener("click", () => {
+    toggleHamburger();
+});
+
+hamburger.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggleHamburger();
+    }
+});
