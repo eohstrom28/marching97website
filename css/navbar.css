@@ -82,6 +82,8 @@ nav button p {
     display: none;
     width: auto;
     padding: 5px;
+    background-color: #EDB634;
+    border: solid 2px #2C2440;
 }
 
 .hamburger img {
