@@ -87,7 +87,7 @@ h1, h2, p {
     border-radius: 10%;
 }
 
-img {
+main img {
     width: 200px;
     height: 250px;
     object-fit: cover;
