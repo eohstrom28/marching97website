@@ -1,19 +1,12 @@
 @font-face {
-    font-family: 'Hammer';
+    font-family: 'Hammersmith';
     src: url('../assets/fonts/Hammersmith.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'Alex';
-    src: url('../assets/fonts/AlexBrush.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Jose';
+    font-family: 'Josefin';
     src: url('../assets/fonts/Josefin.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
@@ -26,9 +19,71 @@
     font-style: normal;
 }
 
-.desc {
-    margin-left: 100px;
-    margin-right: 100px;
+@media (width >= 1024px) {
+    .desc {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    .exec {
+        flex-direction: row;
+        gap: 50px;
+        margin-left: 75px;
+        margin-right: 75px;
+        margin-bottom: 25px;
+    }
+
+    .exec-text {
+        padding: 10px;
+    }
+}
+
+@media (width < 1024px) {
+    h2 {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .desc {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 24px;
+    }
+
+    .exec {
+        gap: 20px;
+        margin: 0 10px 75px;
+    }
+
+    /* avoid large gap at the end of the page on smaller screens*/
+    .senior-rep {
+        margin: 0 10px 20px;
+    }
+}
+
+@media (width < 1024px) and (width >= 600px) {
+    .exec {
+        flex-wrap: wrap;
+    }
+
+    .exec-text {
+        min-width: 400px;
+        max-width: 500px;
+    }
+}
+
+@media (width < 600px) {
+    h1 {
+        margin: 10px;
+    }
+
+    .exec {
+        flex-direction: column;
+    }
+
+    .exec-text {
+        padding: 0px;
+    }
 }
 
 h1 {
@@ -36,7 +91,7 @@ h1 {
 }
 
 h2 {
-    font-family: 'Hammer';
+    font-family: 'Hammersmith';
 }
 
 h1, h2 {
@@ -45,13 +100,14 @@ h1, h2 {
 
 main p {
     color: #2C2440;
-    font-family: 'Jose';
+    font-family: 'Josefin';
+    font-size: large;
 }
 
 .exec-text {
     background-color: #967860;
-    padding: 10px;
     border-radius: 10%;
+    min-width: 300px;
 }
 
 h1, h2, p {
@@ -60,11 +116,7 @@ h1, h2, p {
 
 .exec {
     display: flex;
-    gap: 50px;
     justify-content: space-around;
-    margin-left: 75px;
-    margin-right: 75px;
-    margin-bottom: 25px;
 }
 
 .exec div {
