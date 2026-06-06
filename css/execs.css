@@ -39,10 +39,6 @@
 }
 
 @media (width < 1024px) {
-    h1 {
-        margin: 10px;
-    }
-    
     h2 {
         margin-left: 10px;
         margin-right: 10px;
@@ -56,13 +52,33 @@
 
     .exec {
         gap: 20px;
-        flex-direction: column;
         margin: 0 10px 75px;
     }
 
     /* avoid large gap at the end of the page on smaller screens*/
     .senior-rep {
         margin: 0 10px 20px;
+    }
+}
+
+@media (width < 1024px) and (width >= 600px) {
+    .exec {
+        flex-wrap: wrap;
+    }
+
+    .exec-text {
+        min-width: 400px;
+        max-width: 500px;
+    }
+}
+
+@media (width < 600px) {
+    h1 {
+        margin: 10px;
+    }
+
+    .exec {
+        flex-direction: column;
     }
 
     .exec-text {
