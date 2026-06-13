@@ -20,11 +20,6 @@
 }
 
 @media (width >= 1024px) {
-    .desc {
-        margin-left: 100px;
-        margin-right: 100px;
-    }
-
     .exec {
         flex-direction: row;
         gap: 50px;
@@ -42,12 +37,6 @@
     h2 {
         margin-left: 10px;
         margin-right: 10px;
-    }
-
-    .desc {
-        margin-left: 10px;
-        margin-right: 10px;
-        margin-bottom: 24px;
     }
 
     .exec {
@@ -88,14 +77,21 @@
 
 h1 {
     font-family: 'Germania';
+    color: #EDB634;
+    /* heading border */
+    -webkit-text-stroke: 0.5px #4A321B;
 }
 
 h2 {
     font-family: 'Hammersmith';
 }
 
-h1, h2 {
+.person h2 {
     color: #EDB634;
+}
+
+.role h2 {
+    color: #4B2A11;
 }
 
 main p {
@@ -104,10 +100,21 @@ main p {
     font-size: large;
 }
 
+.person p {
+    color: #FFFFFF;
+}
+
 .exec-text {
-    background-color: #967860;
     border-radius: 10%;
     min-width: 300px;
+}
+
+.person {
+    background-color: #483B4C;
+}
+
+.role {
+    background-color: #D5C5b8;
 }
 
 h1, h2, p {
