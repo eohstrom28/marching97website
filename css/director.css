@@ -19,7 +19,7 @@
     }
 
     .current-director p {
-        padding: 10px 25px;
+        padding: 0 25px 10px;
     }
     
     .directors-list {
@@ -54,16 +54,6 @@
     .current-director p {
         padding: 0 10px;
     }
-
-    .past-directors {
-        justify-content: center;
-        border-radius: 10%;
-    }
-    
-    .directors-list {
-        flex-direction: column;
-        justify-content: space-between;
-    }
 }
 
 body {
@@ -80,23 +70,16 @@ main {
 
 h1 {
     color: #EDB634;
+    /* heading border */
+    -webkit-text-stroke: 0.5px #4A321B;
     font-family: 'Germania';
+    font-size: 2.25em;
 }
 
 h2 {
-    color: #EDB634;
     font-family: 'Hammersmith';
     padding: 25px;
     margin: 0px;
-}
-
-.director-text, .past-directors {
-    background-color: #967860;
-    color: #2C2440;
-}
-
-.director-text {
-    border-radius: 10%;
 }
 
 .current-director {
@@ -105,7 +88,6 @@ h2 {
 }
 
 .current-director {
-    margin-top: 50px;
     gap: 25px;
 }
 
@@ -118,19 +100,37 @@ h2 {
 
 .current-director p {
     max-width: 600px;
+    margin-block-start: 0;
+}
+
+.director-text {
+    background-color: #D5C5B8;
+    color: #2C2440;
+    border-radius: 10%;
+}
+
+.director-text h2 {
+    color: #4A2B11;
 }
 
 .past-directors {
+    background-color: #967860;
+    color: #000000;
     display: flex;
     flex-direction: column;
     margin-bottom: 25px;
+    border-radius: 10%;
 }
 
-.directors-list {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 0 25px 25px;
-    margin: 0px;
+.past-directors h2 {
+    color: #2C2440;
+}
+
+.past-directors ul {
     list-style-type: none;
+    margin-block-start: 0;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
