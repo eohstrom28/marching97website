@@ -40,12 +40,11 @@ nav ul {
 
 .nav-item {
     color: inherit;
-    text-decoration: inherit;
     padding: 10px;
 }
 
 .current, [aria-current=page] {
-    color: #EDB634;
+    color: #604224;
 }
 
 nav li {
@@ -99,11 +98,11 @@ nav button p {
     position: absolute;
     background-color: white;
     padding-inline-start: 0px;
-    left: 50%;
-    transform: translateX(-50%);
     width: 100%;
-    top: 42px;
     font-size: medium;
+    /* center under dropdown*/
+    left: 0;
+    right: 0;
 }
 
 .hide-meet {
@@ -129,14 +128,31 @@ nav button p {
     border-bottom: none;
 }
 
-.current:hover, .current:focus-within {
+/* highlight current page, except on index page (don't highlight Marching 97 logo) */
+[aria-current=page]:not(.no-highlight):hover, [aria-current=page]:not(.no-highlight):focus-within {
+    background-color: #604224;
+    color: #EDB634;
     text-decoration: underline;
 }
 
+/* highlight dropdown(s) containing current page, when applicable */
+.current:hover, .current:focus-within {
+    background-color: #604224;
+    color: #EDB634;
+    /* no underline to prevent users from thinking it's a link */
+}
+
 nav li:hover, nav li:focus-within {
-    background-color: #745943;
+    background-color: #604224;
     color: white;
     text-decoration: underline;
+}
+
+@media (width >= 732px) {
+    /* don't underline buttons to avoid them being confused for links */
+    .nav-item:not(button) {
+        text-decoration: inherit;
+    }
 }
 
 @media (width < 732px) {
@@ -172,7 +188,6 @@ nav li:hover, nav li:focus-within {
 
     .hide-about, .hide-meet, .hide-members {
         position: static;
-        transform: translateX(0%);
         flex-direction: row;
         flex-wrap: wrap;
         gap: 5px;
