@@ -57,5 +57,19 @@
 
 .title {
     color: #edb634;
+    text-shadow: 
+        -2px -2px 0 #2C2440,  
+         2px -2px 0 #2C2440,
+        -2px  2px 0 #2C2440,
+         2px  2px 0 #2C2440;
+    font-family: 'Germania';
+    text-align: center;
+}
+
+.box1 {
     
+}
+
+.box2 {
+
 }
