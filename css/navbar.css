@@ -1,6 +1,14 @@
-#logo {
-    width: 50px;
-    height: auto;
+@font-face {
+    font-family: 'Hammer';
+    src: url('../assets/fonts/Hammersmith.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #AA8A71;
 }
 
 nav {
@@ -11,29 +19,181 @@ nav {
     height: 100%;
     width: 100%;
     padding: 10px;
+    font-family: 'Hammer';
+    font-size: large;
+    box-sizing: border-box;
+}
+
+#logo {
+    width: 50px;
+    height: auto;
 }
 
 nav ul {
     display: flex;
     flex: 1;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     list-style-type: none;
+    text-align: center;
 }
 
 .nav-item {
+    color: inherit;
+    padding: 10px;
+}
+
+.current, [aria-current=page] {
+    color: #604224;
+}
+
+nav li {
+    position: relative;
+    width: 100%;
     color: #2C2440;
 }
 
 nav a {
-    text-decoration: none;
+    display: block;
 }
 
-nav li {
-    padding: 10px;
-}
-
-body {
+nav p {
     margin: 0;
-    padding: 0;
-    background-color: #AA8A71;
+}
+
+nav button:not(.hamburger) {
+    border: none;
+    background-color: inherit;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    width: 100%;
+}
+
+nav button p {
+    display: inline-block;
+    /* keeps the spaces between the button text and the triangle */
+    white-space: pre;
+    font-size: small;
+}
+
+.hamburger {
+    display: none;
+    width: auto;
+    padding: 5px;
+    background-color: #EDB634;
+    border: solid 2px #2C2440;
+}
+
+.hamburger img {
+    width: 25px;
+}
+
+.hide-about, .hide-members {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    padding-inline-start: 0px;
+    width: 100%;
+    font-size: medium;
+    /* center under dropdown*/
+    left: 0;
+    right: 0;
+}
+
+.hide-meet {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: white;
+    padding-inline-start: 0px;
+    width: 100%;
+    top: -2.67px;
+    left: 100%;
+}
+
+.hide-about li, .hide-members li {
+    box-sizing: border-box;
+    border: solid #4A321B;
+}
+
+.hide-about li:not(:last-child), .hide-members li:not(:last-child), .hide-meet li:not(:last-child) {
+    border-bottom: none;
+}
+
+/* highlight current page, except on index page (don't highlight Marching 97 logo) */
+[aria-current=page]:not(.no-highlight):hover, [aria-current=page]:not(.no-highlight):focus-within {
+    background-color: #604224;
+    color: #EDB634;
+    text-decoration: underline;
+}
+
+/* highlight dropdown(s) containing current page, when applicable */
+.current:hover, .current:focus-within {
+    background-color: #604224;
+    color: #EDB634;
+    /* no underline to prevent users from thinking it's a link */
+}
+
+nav li:hover, nav li:focus-within {
+    background-color: #604224;
+    color: white;
+    text-decoration: underline;
+}
+
+@media (width >= 732px) {
+    /* don't underline buttons to avoid them being confused for links */
+    .nav-item:not(button) {
+        text-decoration: inherit;
+    }
+}
+
+@media (width < 732px) {
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    nav {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        padding: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    nav ul {
+        padding-inline-start: 0;
+        flex-direction: column;
+        height: fit-content;
+        margin-block-start: 0;
+        margin-block-end: 0;
+    }
+
+    nav li {
+        position: relative;
+        width: auto;
+    }
+
+    .hide-about, .hide-meet, .hide-members {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    .hide-about li, .hide-meet li, .hide-members li {
+        border: none;
+    }
 }
