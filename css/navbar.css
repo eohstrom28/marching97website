@@ -15,7 +15,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
+    background-color: #F1F0E7;
     height: 100%;
     width: 100%;
     padding: 10px;
@@ -96,7 +96,7 @@ nav button p {
     justify-content: center;
     align-items: center;
     position: absolute;
-    background-color: white;
+    background-color: #F1F0E7;
     padding-inline-start: 0px;
     width: 100%;
     font-size: medium;
@@ -112,7 +112,7 @@ nav button p {
     justify-content: center;
     align-items: center;
     position: absolute;
-    background-color: white;
+    background-color: #F1F0E7;
     padding-inline-start: 0px;
     width: 100%;
     top: -2.67px;
@@ -144,7 +144,7 @@ nav button p {
 
 nav li:hover, nav li:focus-within {
     background-color: #604224;
-    color: white;
+    color: #F1F0E7;
     text-decoration: underline;
 }
 
