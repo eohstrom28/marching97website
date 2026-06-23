@@ -42,6 +42,16 @@
         align-items: center;
         gap: 10px;
     }
+
+    .two-leaders {
+        margin-bottom: 10px;
+    }
+}
+
+@media (width <= 768px) {
+    .two-leaders {
+        margin-bottom: 20px;
+    }
 }
 
 @media (width <= 425px) {
@@ -61,6 +71,10 @@
 
     .rank-leader-img {
         width: 300px;
+    }
+
+    .two-leaders {
+        margin-bottom: 20px;
     }
 }
 
