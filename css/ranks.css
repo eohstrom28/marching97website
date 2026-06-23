@@ -134,6 +134,12 @@ h2 {
     border-radius: 20px;
 }
 
+.rank-leader-text {
+    background-color: #FCD55D;
+    padding: 10px;
+    border-radius: 20px;
+}
+
 .rank-leader p {
     margin-bottom: 0;
 }
