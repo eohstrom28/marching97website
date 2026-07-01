@@ -49,6 +49,10 @@ img {
     border-radius: 10px;
 }
 
+figcaption {
+    font-style: italic;
+}
+
 .long-img {
     width: 500px;
 }
@@ -73,7 +77,7 @@ figcaption {
 .imgs-and-facts {
     display: flex;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 20px;
     margin: 24px 50px;
 }
@@ -95,6 +99,7 @@ figcaption {
     color: #2C2440;
     display: flex;
     flex-direction: column;
+    align-self: stretch;
     padding: 10px;
     border-radius: 20px;
 }
@@ -114,7 +119,7 @@ figcaption {
     justify-content: space-around;
     align-items: flex-start;
     gap: 10px;
-    margin: 0 20px;
+    margin: 0 20px 20px;
 }
 
 .timeline, .photos {
@@ -143,7 +148,7 @@ figcaption {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 .three-photos {
@@ -154,7 +159,36 @@ figcaption {
 .photo-pair {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
+}
+
+.photo-columns {
+    display: flex;
+    gap: 20px;
+    margin: 0 20px 20px;
+}
+
+.worlds-fair, .column-pair {
+    flex: 1;
+}
+
+.worlds-fair img {
+    width: 90%;
+}
+
+.column-pair {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.column-pair img, .column-pair figcaption {
+    width: 400px;
+}
+
+.column-pair figcaption {
+    width: 450px;
 }
 
 .caption-and-description {
@@ -174,4 +208,16 @@ figcaption {
 
 details p:last-child {
     margin-bottom: 0;
+}
+
+.last-img {
+    margin: 0 20px 20px;
+}
+
+.subway-article, .subway-text {
+    width: 75%;
+}
+
+.subway-text {
+    box-sizing: border-box;
 }
