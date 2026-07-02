@@ -20,12 +20,12 @@
 }
 
 @media (width >= 1024px) {
-    .img-and-background {
+    .img-and-desc {
         gap: 50px;
         margin: 0 50px;
     }
 
-    .img-and-background figure, .img-and-background p {
+    .img-and-desc figure, .description {
         flex: 1;
     }
 
@@ -74,7 +74,7 @@
 }
 
 @media (width < 1024px) {
-    .img-and-background {
+    .img-and-desc {
         flex-direction: column;
         gap: 20px;
     }
@@ -160,7 +160,7 @@
 }
 
 @media (width >= 550px) and (width < 1024px) {
-    .img-and-background {
+    .img-and-desc {
         margin: 0 20px;
     }
 
@@ -174,7 +174,7 @@
 }
 
 @media (width < 550px) {
-    .img-and-background {
+    .img-and-desc {
         margin: 0 10px;
     }
 
@@ -209,7 +209,7 @@ h1 {
     text-align: center;
 }
 
-.img-and-background {
+.img-and-desc {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -241,7 +241,7 @@ figcaption {
     border-radius: 10px;
 }
 
-.img-and-background p {
+.description {
     background-color: #D5C5B8;
     color: #2C2440;
     font-family: 'Josefin';
