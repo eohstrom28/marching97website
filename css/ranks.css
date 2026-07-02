@@ -120,10 +120,6 @@ h2 {
     margin: 0;
 }
 
-.members-heading {
-    font-size: larger;
-}
-
 .rank-text ul, .rank-text li {
     list-style-type: none;
     padding-inline-start: 0;
