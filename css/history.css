@@ -21,8 +21,8 @@
 
 @media (width >= 1024px) {
     .img-and-desc {
-        gap: 50px;
-        margin: 0 50px;
+        gap: 20px;
+        margin: 0 20px;
     }
 
     .img-and-desc figure, .description {
@@ -40,7 +40,7 @@
 
     .img-fact-group {
         justify-content: space-around;
-        align-items: flex-start;
+        align-items: flex-end;
         gap: 10px;
     }
 
@@ -52,20 +52,12 @@
         width: 100%;
     }
 
-    .column-pair img, .column-pair figcaption {
+    .fifty-and-subway img {
         width: 75%;
     }
 
-    .column-pair figcaption {
+    .fifty-and-subway figcaption {
         box-sizing: border-box;
-    }
-
-    .single-photo, .photo-pair {
-        flex: 1;
-    }
-
-    .photo-pair {
-        flex-direction: column;
     }
 
     .subway-article, .subway-text {
@@ -91,7 +83,7 @@
 
     .img-fact-group {
         justify-content: center;
-        align-items: flex-end;
+        align-items: center;
         gap: 20px;
     }
 
@@ -103,7 +95,7 @@
         flex-direction: column;
     }
 
-    .photo-columns {
+    .fair-fifty-subway {
         flex-direction: column;
     }
 
@@ -116,14 +108,23 @@
     .small-img {
         width: 100%;
     }
-    
-    .three-photos {
-        align-items: flex-end;
+}
+
+@media (width >= 850px) {
+    .two-timeline-photos figure {
+        flex: 1;
     }
-    
-    .photo-pair {
-        flex-direction: row;
-        align-items: flex-end;
+
+    .two-timeline-photos img {
+        height: 100%;
+    }
+
+    .execs-and-97 figure {
+        flex: 1;
+    }
+
+    .execs-and-97 img {
+        height: 100%;
     }
 }
 
@@ -132,11 +133,11 @@
         width: 100%;
     }
 
-    .three-photos {
+    .two-timeline-photos {
         flex-direction: column;
     }
 
-    .photo-pair {
+    .execs-and-97 {
         flex-direction: column;
     }
 }
@@ -150,12 +151,16 @@
         margin: 0 20px 20px;
     }
 
-    .photo-columns {
+    .execs-and-97 {
+        margin: 0 20px 20px;
+    }
+
+    .fair-fifty-subway {
         margin: 0 20px 20px;
     }
     
     .last-img {
-        margin: 0 20px 20px;
+        margin: 0 20px 10px;
     }
 }
 
@@ -164,16 +169,17 @@
         margin: 0 20px;
     }
 
-    .img-fact-group figure {
+    .img-fact-group figure, .img-fact-group section {
         flex: 1;
-    }
-
-    .img-fact-group section {
-        flex: 2;
     }
 }
 
 @media (width < 550px) {
+    h1 {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
     .img-and-desc {
         margin: 0 10px;
     }
@@ -191,12 +197,16 @@
         margin: 0 10px 20px;
     }
 
-    .photo-columns {
+    .execs-and-97 {
+        margin: 0 10px 20px;
+    }
+
+    .fair-fifty-subway {
         margin: 0 10px 20px;
     }
 
     .last-img {
-        margin: 0 10px 20px;
+        margin: 0 10px 10px;
     }
 }
 
@@ -205,7 +215,7 @@ h1 {
     /* heading border */
     -webkit-text-stroke: 0.5px #4A321B;
     font-family: 'Germania';
-    font-size: 2.25em;
+    font-size: 2.5em;
     text-align: center;
 }
 
@@ -243,12 +253,19 @@ figcaption {
 
 .description {
     background-color: #D5C5B8;
+    box-sizing: border-box;
     color: #2C2440;
     font-family: 'Josefin';
-    padding: 20px;
+    padding: 20px 20px 0;
     margin-top: 0;
     margin-bottom: 0;
     border-radius: 20px;
+}
+
+.description p {
+    padding-bottom: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .imgs-and-facts {
@@ -284,17 +301,17 @@ figcaption {
 .timeline-and-photos {
     display: flex;
     justify-content: space-around;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 20px;
 }
 
-.timeline, .photos {
+.timeline, .timeline-photos {
     flex: 1;
 }
 
 .timeline {
     background-color: #4A321B;
-    padding: 10px;
+    box-sizing: border-box;
     border-radius: 20px;
     text-align: center;
 }
@@ -307,32 +324,33 @@ figcaption {
 .timeline p {
     color: #F1F0E7;
     font-family: 'Josefin';
+    padding: 0 10px;
 }
 
-.photos {
+.timeline-photos {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     gap: 20px;
 }
 
-.three-photos {
+.two-timeline-photos {
     display: flex;
     gap: 20px;
 }
 
-.photo-pair {
+.execs-and-97 {
     display: flex;
     gap: 20px;
 }
 
-.photo-columns {
+.fair-fifty-subway {
     display: flex;
     gap: 20px;
 }
 
-.worlds-fair, .column-pair {
+.worlds-fair, .fifty-and-subway {
     flex: 1;
 }
 
@@ -344,7 +362,7 @@ figcaption {
     box-sizing: border-box;
 }
 
-.column-pair {
+.fifty-and-subway {
     display: flex;
     flex-direction: column;
     gap: 20px;
