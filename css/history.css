@@ -256,16 +256,19 @@ figcaption {
     box-sizing: border-box;
     color: #2C2440;
     font-family: 'Josefin';
-    padding: 20px 20px 0;
     margin-top: 0;
     margin-bottom: 0;
     border-radius: 20px;
 }
 
 .description p {
-    padding-bottom: 20px;
+    padding: 20px 20px 0px;
     margin-top: 0;
     margin-bottom: 0;
+}
+
+.description .last-desc-p {
+    padding-bottom: 20px;
 }
 
 .imgs-and-facts {
