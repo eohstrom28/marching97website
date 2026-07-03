@@ -83,7 +83,7 @@ h1 {
     /* heading border */
     -webkit-text-stroke: 0.5px #4A321B;
     font-family: 'Germania';
-    font-size: 2.25em;
+    font-size: 2.5em;
     text-align: center;
 }
 
@@ -118,10 +118,6 @@ h1 {
 
 h2 {
     margin: 0;
-}
-
-.members-heading {
-    font-size: larger;
 }
 
 .rank-text ul, .rank-text li {
