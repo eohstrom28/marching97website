@@ -73,7 +73,7 @@ h1 {
     /* heading border */
     -webkit-text-stroke: 0.5px #4A321B;
     font-family: 'Germania';
-    font-size: 2.25em;
+    font-size: 2.5em;
 }
 
 h2 {
@@ -106,7 +106,7 @@ h2 {
 .director-text {
     background-color: #D5C5B8;
     color: #2C2440;
-    border-radius: 10%;
+    border-radius: 30px;
 }
 
 .director-text h2 {

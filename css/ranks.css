@@ -1,0 +1,154 @@
+@font-face {
+    font-family: 'Germania';
+    src: url(../assets/fonts/GermaniaOne-Regular.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Josefin';
+    src: url('../assets/fonts/Josefin.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Hammersmith';
+    src: url('../assets/fonts/Hammersmith.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media (width <= 1024px) {
+    .text-and-images {
+        flex-direction: column;
+    }
+}
+
+@media (width <= 1024px) and (width > 425px) {
+    .text-and-images {
+        margin: 0 10% 20px;
+    }
+
+    .rank-leader-img {
+        width: 300px;
+    }
+}
+
+@media (width <= 1024px) and (width > 768px) {
+    .rank-leader {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .two-leaders {
+        margin-bottom: 10px;
+    }
+}
+
+@media (width <= 768px) {
+    .two-leaders {
+        margin-bottom: 20px;
+    }
+}
+
+@media (width <= 425px) {
+    .text-and-images {
+        margin: 0 10px 10px;
+    }
+
+    .rank-leader-img {
+        width: 250px;
+    }
+}
+
+@media (width > 1024px) {
+    .text-and-images {
+        margin: 0 50px 20px;
+    }
+
+    .rank-leader-img {
+        width: 300px;
+    }
+
+    .two-leaders {
+        margin-bottom: 20px;
+    }
+}
+
+h1 {
+    color: #EDB634;
+    /* heading border */
+    -webkit-text-stroke: 0.5px #4A321B;
+    font-family: 'Germania';
+    font-size: 2.5em;
+    text-align: center;
+}
+
+.text-and-images {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.rank-text, .photos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.rank-text {
+    background-color: #EDB634;
+    color: #2C2440;
+    font-family: 'Hammersmith';
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+h2 {
+    margin: 0;
+}
+
+.rank-text ul, .rank-text li {
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+
+.rank-leader-img {
+    margin-bottom: 16px;
+    border-radius: 20px;
+}
+
+.rank-leader-text {
+    background-color: #FCD55D;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.rank-leader p {
+    margin-bottom: 0;
+}
+
+.photos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+
+.photos img {
+    width: 100%;
+    border-radius: 20px;
+}
