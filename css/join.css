@@ -12,6 +12,12 @@
     font-style: normal;
 }
 
+body {
+    font-family:'Hammersmith';
+    text-align: center;
+    margin: 0;
+}
+
 .title {
     color: #edb634;
     text-shadow: 
@@ -21,4 +27,19 @@
          2px  1px 0 #2C2440;
     font-family: 'Germania';
     text-align: center;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+.bigimg {
+    width: 50%;
+}
+
+.smallimg {
+    width: 25%;
 }
