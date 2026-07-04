@@ -40,11 +40,13 @@ body {
 
 .bigimg {
     width: 50%;
+    border-radius: 10px;
 }
 
 .smallimg {
     width: 25%;
     object-fit: cover;
+    border-radius: 5px;
 }
 
 .bottomrow {
