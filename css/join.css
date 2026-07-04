@@ -29,11 +29,13 @@ body {
     text-align: center;
 }
 
-.left {
+.left, .right {
     display: flex;
     flex-direction: column;
     gap: 20px;
     flex: 1;
+    max-width: 500px;
+    margin
 }
 
 .bigimg {
@@ -42,4 +44,10 @@ body {
 
 .smallimg {
     width: 25%;
+    object-fit: cover;
+}
+
+.bottomrow {
+    display: flex; 
+    gap: 20px;
 }
