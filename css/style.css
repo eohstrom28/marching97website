@@ -20,11 +20,11 @@
 }
 
 @media (width < 1232px) and (width >= 1121px) {
-    .socials {
+    #socials {
         padding: 20px 30px;
     }
     
-    .social-links {
+    #social-links {
         gap: 30px;
     }
 
@@ -34,11 +34,11 @@
 }
 
 @media (width < 1121px) and (width >= 1024px) {
-    .socials {
+    #socials {
         padding: 20px 10px;
     }
     
-    .social-links {
+    #social-links {
         gap: 10px;
     }
 
@@ -49,11 +49,11 @@
 
 
 @media (width >= 1232px) or ((width <= 850px) and (width >= 750px)) {
-    .socials {
+    #socials {
         padding: 20px 50px;
     }
 
-    .social-links {
+    #social-links {
         gap: 50px;
     }
 
@@ -68,27 +68,27 @@
         margin-right: 50px;
     }
 
-    .img-logo {
+    #img-and-logo {
         justify-content: space-evenly;
         gap: 50px;
     }
 
-    .desc-socials-img {
+    #desc-socials-img {
         justify-content: space-evenly;
         gap: 50px;
     }
 
-    .desc-and-socials {
+    #desc-and-socials {
         justify-content: space-between;
         align-items: stretch;
         flex: 2;
     }
 
-    .desc-socials-img img {
+    #desc-socials-img img {
         flex: 1;
     }
 
-    .img-and-announcements {
+    #img-and-announcements {
         justify-content: space-evenly;
         gap: 50px;
     }
@@ -100,32 +100,32 @@
         margin-right: 10px;
     }
 
-    .img-logo {
+    #img-and-logo {
         flex-direction: column;
         gap: 20px;
     }
 
-    .desc-socials-img {
+    #desc-socials-img {
         flex-direction: column;
         gap: 20px;
     }
 
-    .description {
+    #description {
         text-align: center;
     }
 
-    .img-and-announcements {
+    #img-and-announcements {
         flex-direction: column;
         gap: 20px;
     }
 }
 
 @media (width < 1024px) and (width >= 950px) {
-    .socials {
+    #socials {
         padding: 20px 85px;
     }
     
-    .social-links {
+    #social-links {
         gap: 85px;
     }
 
@@ -135,11 +135,11 @@
 }
 
 @media (width < 950px) and (width >= 850px) {
-    .socials {
+    #socials {
         padding: 20px 70px;
     }
     
-    .social-links {
+    #social-links {
         gap: 70px;
     }
 
@@ -149,7 +149,7 @@
 }
 
 @media (width >= 768px) {
-    .links {
+    #end-links {
         justify-content: space-between;
         gap: 50px;
     }
@@ -164,28 +164,28 @@
         width: 300px;
     }
     
-    .links {
+    #end-links {
         flex-direction: column;
         gap: 10px;
     }
 
-    .full-band {
+    #full-band-img {
         display: none;
     }
 }
 
 @media (width < 768px) and (width > 500px) {
-    .links {
+    #end-links {
         margin: 0 50px;
     }
 }
 
 @media (width < 750px) and (width >= 650px) { 
-    .socials {
+    #socials {
         padding: 20px 30px;
     }
 
-    .social-links {
+    #social-links {
         gap: 30px;
     }
 
@@ -195,11 +195,11 @@
 }
 
 @media (width < 650px) and (width >= 550px) { 
-    .socials {
+    #socials {
         padding: 10px;
     }
 
-    .social-links {
+    #social-links {
         gap: 10px;
     }
 
@@ -209,17 +209,17 @@
 }
 
 @media (width < 550px) {
-    .social-links {
+    #social-links {
         flex-direction: column;
     }
 }
 
 @media (width < 550px) and (width >= 482px) {
-    .socials {
+    #socials {
         padding: 10px 75px;
     }
 
-    .social-links {
+    #social-links {
         gap: 20px;
     }
 
@@ -229,11 +229,11 @@
 }
 
 @media (width < 482px) and (width >= 406px) {
-    .socials {
+    #socials {
         padding: 10px 50px;
     }
 
-    .social-links {
+    #social-links {
         gap: 20px;
     }
 
@@ -243,11 +243,11 @@
 }
 
 @media (width < 406px) {
-    .socials {
+    #socials {
         padding: 10px 20px;
     }
 
-    .social-links {
+    #social-links {
         flex-direction: column;
         gap: 20px;
     }
@@ -279,7 +279,7 @@ div {
     justify-content: center;
 }
 
-.img-logo {
+#img-and-logo {
     align-items: center;
 }
 
@@ -292,16 +292,16 @@ h2 {
     font-size: 1.75em;
 }
 
-.desc-socials-img {
+#desc-socials-img {
     align-items: center;
 }
 
-.desc-and-socials {
+#desc-and-socials {
     flex-direction: column;
     gap: 20px;
 }
 
-.description {
+#description {
     background-color: #FCD55D;
     color: #2C2440;
     font-family: 'Josefin';
@@ -313,12 +313,12 @@ h2 {
     border-radius: 20px;
 }
 
-.description p {
+#description p {
     padding: 0 20px;
     margin: 0;
 }
 
-.socials {
+#socials {
     background-color: #4A321B;
     color: #EDB634;
     font-family: 'Hammersmith';
@@ -337,7 +337,7 @@ h3 {
     margin-block-end: 0;
 }
 
-.social-links {
+#social-links {
     display: flex;
     justify-content: space-evenly;
     align-items: stretch;
@@ -347,11 +347,11 @@ h3 {
     flex: 1;
 }
 
-.social-links a {
+#social-links a {
     flex: 1;
 }
 
-.social-links img {
+#social-links img {
     width: 100%;
 }
 
@@ -359,7 +359,7 @@ main a {
     font-size: larger;
 }
 
-.socials a {
+#socials a {
     background-color: #604429;
     display: flex;
     justify-content: center;
@@ -370,14 +370,14 @@ main a {
 }
 
 #youtube {
-    padding: 0px 20px;
+    padding: 0px 20px !important;
 }
 
 #youtube img {
     width: 150%;
 }
 
-.upcoming {
+#upcoming {
     text-align: center;
     background-color: #FCD55D;
     color: #2C2440;
@@ -388,18 +388,18 @@ main a {
     border-radius: 20px;
 }
 
-.upcoming p {
+#upcoming p {
     font-family: 'Josefin';
     font-size: large;
     margin-block-start: 0;
     margin-block-end: 0;
 }
 
-.img-and-announcements {
+#img-and-announcements {
     align-items: center;
 }
 
-.announcements {
+#announcements {
     background-color: #4A321B;
     color: #EDB634;
     text-align: center;
@@ -408,12 +408,12 @@ main a {
     border-radius: 20px;
 }
 
-.announcements p {
+#announcements p {
     font-family: 'Josefin';
     margin-block-end: 0;
 }
 
-.links {
+#end-links {
     margin-top: 24px;
     margin-bottom: 24px;
 }
@@ -445,7 +445,7 @@ main a {
     border-radius: 20px;
 }
 
-.full-band {
+#full-band-img {
     width: 100%;
     opacity: 25%;
     border-radius: 0;
