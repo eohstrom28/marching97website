@@ -13,18 +13,13 @@
 }
 
 @media (width >= 1024px) {
-    .current-director {
+    #current-director {
         justify-content: space-around;
         margin-bottom: 50px;
     }
 
-    .current-director p {
+    #current-director p {
         padding: 0 25px 10px;
-    }
-    
-    .directors-list {
-        flex-direction: row;
-        gap: 20px;
     }
 
     .director-group {
@@ -34,7 +29,12 @@
 }
 
 @media (width < 1024px) {
-    .current-director {
+    h1 {
+        margin-block-start: 0.5em;
+        margin-block-end: 0.5em;
+    }
+
+    #current-director {
         flex-direction: column;
         justify-content: center;
         margin-bottom: 25px;
@@ -42,16 +42,11 @@
         margin-right: 10px;
     }
 
-    h1 {
-        margin-block-start: 0.5em;
-        margin-block-end: 0.5em;
-    }
-
-    .director-text {
+    #director-text {
         max-width: 800px;
     }
 
-    .current-director p {
+    #director-text p {
         padding: 0 10px;
     }
 }
@@ -82,38 +77,35 @@ h2 {
     margin: 0px;
 }
 
-.current-director {
+#current-director {
     display: flex;
     align-items: center;
-}
-
-.current-director {
     gap: 25px;
 }
 
-.current-director img {
+#current-director img {
     border-radius: 10%;
     max-width: 300px;
     max-height: 300px;
     object-fit: cover;
 }
 
-.current-director p {
-    max-width: 600px;
-    margin-block-start: 0;
-}
-
-.director-text {
+#director-text {
     background-color: #D5C5B8;
     color: #2C2440;
     border-radius: 30px;
 }
 
-.director-text h2 {
+#director-text h2 {
     color: #4A2B11;
 }
 
-.past-directors {
+#director-text p {
+    max-width: 600px;
+    margin-block-start: 0;
+}
+
+#past-directors {
     background-color: #967860;
     color: #000000;
     display: flex;
@@ -122,11 +114,11 @@ h2 {
     border-radius: 10%;
 }
 
-.past-directors h2 {
+#past-directors h2 {
     color: #2C2440;
 }
 
-.past-directors ul {
+#past-directors ul {
     list-style-type: none;
     margin-block-start: 0;
     padding: 0 20px;
