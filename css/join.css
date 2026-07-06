@@ -29,22 +29,26 @@ body {
     text-align: center;
 }
 
+.container {
+    display: flex;
+    align-items:: flex-start;
+}
 .left, .right {
     display: flex;
     flex-direction: column;
     gap: 20px;
     flex: 1;
-    max-width: 500px;
+    max-width: 5000px;
     margin
 }
 
 .bigimg {
-    width: 50%;
+    width: 100%;
     border-radius: 10px;
 }
 
 .smallimg {
-    width: 25%;
+    width: 50%;
     object-fit: cover;
     border-radius: 5px;
 }
@@ -52,4 +56,21 @@ body {
 .bottomrow {
     display: flex; 
     gap: 20px;
+}
+
+.box {
+    background-color: #D5C5B8;
+    border-radius: 20px;
+    color: #2C2440;
+
+}
+
+.big {
+    flex: 2;
+    text-align: left;
+    padding: 20px;
+}
+
+.little {
+    
 }
