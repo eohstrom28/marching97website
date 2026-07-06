@@ -69,8 +69,16 @@ body {
     flex: 2;
     text-align: left;
     padding: 20px;
+    font-size: 1.1em;
 }
 
 .little {
+    flex: 2;
+    padding: 20px;
+    text-align: center;
+    width: 50%;
+}
+
+.join {
     
 }
