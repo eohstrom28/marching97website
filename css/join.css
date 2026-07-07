@@ -12,6 +12,12 @@
     font-style: normal;
 }
 
+@media (width >= 1024px) {
+    #container {
+        margin: 0px 50px;
+    }
+}
+
 body {
     font-family:'Hammersmith';
     text-align: center;
@@ -29,10 +35,7 @@ h1 {
 main ul {
     padding-inline-start: 0px;
     max-width: fit-content;
-}
-
-main li {
-    align-self: center;
+    text-align: start;
 }
 
 #container {
@@ -74,6 +77,8 @@ main img {
     padding: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #big {
@@ -88,7 +93,6 @@ main img {
     flex: 1;
     padding: 20px;
     text-align: center;
-    width: 50%;
 }
 
 #join {
@@ -96,11 +100,6 @@ main img {
     background-color: #2C2440; 
     color: #edb634;            
     border: 15px solid #745943; 
-        text-shadow: 
-        -2px -2px 0 #4a321b,  
-         2px -2px 0 #4a321b,
-        -2px  2px 0 #4a321b,
-         4px  2px 0 #4a321b;
     border-radius: 20px;
     display: flex;
     align-items: center;
