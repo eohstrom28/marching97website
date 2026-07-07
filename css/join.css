@@ -21,12 +21,13 @@ body {
 .title {
     color: #edb634;
     text-shadow: 
-        -1px -1px 0 #2C2440,  
-         1px -1px 0 #2C2440,
-        -1px  1px 0 #2C2440,
-         2px  1px 0 #2C2440;
+        -2px -2px 0 #2C2440,  
+         2px -2px 0 #2C2440,
+        -2px  2px 0 #2C2440,
+         4px  2px 0 #2C2440;
     font-family: 'Germania';
     text-align: center;
+    font-size: 3.5em;
 }
 
 .container {
@@ -66,19 +67,36 @@ body {
 }
 
 .big {
-    flex: 2;
+    flex: 1;
     text-align: left;
     padding: 20px;
     font-size: 1.1em;
+    max-height: 400px;
 }
 
 .little {
-    flex: 2;
+    flex: 1;
     padding: 20px;
     text-align: center;
     width: 50%;
 }
 
 .join {
-    
+    flex: 1;
+    background-color: #2C2440; 
+    color: #edb634;            
+    border: 15px solid #745943; 
+        text-shadow: 
+        -2px -2px 0 #4a321b,  
+         2px -2px 0 #4a321b,
+        -2px  2px 0 #4a321b,
+         4px  2px 0 #4a321b;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: 'Germania';
+    text-decoration: underline;
+    font-size: 2.5em;
 }

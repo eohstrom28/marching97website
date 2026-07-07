@@ -80,6 +80,7 @@
     margin-top: 7px;
     margin-left: 50px;
     width: 90%;
+    margin: 7px auto 0 auto;
 }
 
 .light {
@@ -103,4 +104,5 @@
     object-fit: center;
     justify-content: center;
     margin-top: 20px;
+    margin: 7px auto 0 auto;
 }
