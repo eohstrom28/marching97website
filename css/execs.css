@@ -89,6 +89,11 @@ h2 {
 
 .person h2 {
     color: #EDB634;
+    text-shadow: 
+        -1px -1px 0 #2C2440,  
+         1px -1px 0 #2C2440,
+        -1px  1px 0 #2C2440,
+         1px  1px 0 #2C2440;
 }
 
 .role h2 {

@@ -1,0 +1,111 @@
+@font-face {
+    font-family: 'Hammersmith';
+    src: url('../assets/fonts/Hammersmith.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Germania';
+    src: url('../assets/fonts/GermaniaOne-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media (width >= 1024px) {
+    #container {
+        margin: 0px 50px;
+    }
+}
+
+body {
+    font-family:'Hammersmith';
+    text-align: center;
+    margin: 0;
+}
+
+h1 {
+    color: #edb634;
+    -webkit-text-stroke: 0.5px #4A321B;
+    font-family: 'Germania';
+    text-align: center;
+    font-size: 2.5em;
+}
+
+main ul {
+    padding-inline-start: 0px;
+    max-width: fit-content;
+    text-align: start;
+}
+
+#container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+#left, #right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+}
+
+#bigimg {
+    width: 100%;
+}
+
+.smallimg {
+    flex: 1;
+    width: 40%;
+    object-fit: cover;
+}
+
+main img {
+    border-radius: 20px;
+}
+
+.bottomrow {
+    display: flex; 
+    gap: 20px;
+}
+
+.box {
+    background-color: #D5C5B8;
+    border-radius: 20px;
+    color: #2C2440;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#big {
+    flex: 1;
+    text-align: left;
+    padding: 20px;
+    font-size: 1.1em;
+    max-height: 400px;
+}
+
+#little {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+#join {
+    flex: 1;
+    background-color: #2C2440; 
+    color: #edb634;            
+    border: 15px solid #745943; 
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-family: 'Germania';
+    text-decoration: underline;
+    font-size: 2.5em;
+}
