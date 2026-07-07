@@ -42,10 +42,6 @@
 }
 
 @media (width < 768px) and (width >= 500px) {
-    /* #refrosh {
-        margin: 0px 10%;
-    } */
-
     .refrosh-img {
         flex: 0;
     }
@@ -68,6 +64,7 @@ body {
 
 h1 {
     color: #edb634;
+    /* heading border */
     -webkit-text-stroke: 0.5px #4A321B;
     font-family: 'Germania';
     text-align: center;
