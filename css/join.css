@@ -18,40 +18,48 @@ body {
     margin: 0;
 }
 
-.title {
+h1 {
     color: #edb634;
-    text-shadow: 
-        -2px -2px 0 #2C2440,  
-         2px -2px 0 #2C2440,
-        -2px  2px 0 #2C2440,
-         4px  2px 0 #2C2440;
+    -webkit-text-stroke: 0.5px #4A321B;
     font-family: 'Germania';
     text-align: center;
-    font-size: 3.5em;
+    font-size: 2.5em;
 }
 
-.container {
-    display: flex;
-    align-items:: flex-start;
+main ul {
+    padding-inline-start: 0px;
+    max-width: fit-content;
 }
-.left, .right {
+
+main li {
+    align-self: center;
+}
+
+#container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+#left, #right {
     display: flex;
     flex-direction: column;
     gap: 20px;
     flex: 1;
-    max-width: 5000px;
-    margin
 }
 
-.bigimg {
+#bigimg {
     width: 100%;
-    border-radius: 10px;
 }
 
 .smallimg {
-    width: 50%;
+    flex: 1;
+    width: 40%;
     object-fit: cover;
-    border-radius: 5px;
+}
+
+main img {
+    border-radius: 20px;
 }
 
 .bottomrow {
@@ -63,10 +71,12 @@ body {
     background-color: #D5C5B8;
     border-radius: 20px;
     color: #2C2440;
-
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
-.big {
+#big {
     flex: 1;
     text-align: left;
     padding: 20px;
@@ -74,14 +84,14 @@ body {
     max-height: 400px;
 }
 
-.little {
+#little {
     flex: 1;
     padding: 20px;
     text-align: center;
     width: 50%;
 }
 
-.join {
+#join {
     flex: 1;
     background-color: #2C2440; 
     color: #edb634;            
