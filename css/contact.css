@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'Hammersmith';
+    src: url('../assets/fonts/Hammersmith.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Germania';
+    src: url('../assets/fonts/GermaniaOne-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.title {
+    color: #edb634;
+    text-shadow: 
+        -1px -1px 0 #2C2440,  
+         1px -1px 0 #2C2440,
+        -1px  1px 0 #2C2440,
+         2px  1px 0 #2C2440;
+    font-family: 'Germania';
+    text-align: center;
+}

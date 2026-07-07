@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'Hammersmith';
+    src: url('../assets/fonts/Hammersmith.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Germania';
+    src: url('../assets/fonts/GermaniaOne-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    color: #edb634;
+    -webkit-text-stroke: 0.5px #4A321B;
+    font-family: 'Germania';
+    text-align: center;
+    font-size: 2.5em;
+}
+
+main ul {
+    padding-inline-start: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    list-style-type: none;
+}
+
+main li {
+    font-family: 'Hammersmith';
+    text-align: center;
+    border-radius: 30px;
+    width: 90%;
+    padding: 6px;
+    
+}
+
+.light {
+    background-color: #D5C5B8;
+    color: #2C2440;
+}
+
+.dark {
+    background-color: #745943;
+    color: #FFFFFF;
+}
+
+.smallbox {
+    font-family: 'Hammersmith';
+    text-align: center;
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    max-width: 300px;
+    max-height: 25px;
+    object-fit: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin: 7px auto 0 auto;
+}
