@@ -36,10 +36,10 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    flex: 0 0 33.3333%;
+    flex: 1;
 }
 
-img {
+main img {
     width: 100%;
     border-radius: 20px;
 }
