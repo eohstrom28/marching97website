@@ -12,13 +12,10 @@
     font-style: normal;
 }
 
-.title {
+h1 {
     color: #edb634;
-    text-shadow: 
-        -1px -1px 0 #2C2440,  
-         1px -1px 0 #2C2440,
-        -1px  1px 0 #2C2440,
-         2px  1px 0 #2C2440;
+    -webkit-text-stroke: 0.5px #4A321B;
     font-family: 'Germania';
     text-align: center;
-}
+    font-size: 2.5em;
+} 

@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-The Marching 97 website is the best website east of all points west.
+The Marching 97 website is the finest website east of all points west.
 
 ## Contacts
 
@@ -41,5 +41,5 @@ marching97website/
     * Make your own branch with: git checkout -b new_branch_name
     * Switch branch with: git switch branch_name
     * Pull most recent update from branch with: git pull
-    * Merge on git
+    * Merge on git / git merge origin main
         * If there'a a flop, fix it pls
