@@ -45,7 +45,7 @@
     }
 
     /* avoid large gap at the end of the page on smaller screens*/
-    .senior-rep {
+    #senior-rep {
         margin: 0 10px 20px;
     }
 }
@@ -127,7 +127,7 @@ h1, h2, p {
     justify-content: space-around;
 }
 
-.exec div {
+.exec section {
     flex: 2;
 }
 
