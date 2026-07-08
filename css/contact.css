@@ -19,3 +19,54 @@ h1 {
     text-align: center;
     font-size: 2.5em;
 } 
+
+body {
+    font-family:'Hammersmith';
+    text-align: center;
+    margin: 0px 50px;
+}
+
+#container {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+#left, #middle, #right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 0 0 33.3333%;
+}
+
+img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.light {
+    color: #2C2440;
+    background-color: #D5C5B8;
+}
+
+#dark {
+    background-color: #2C2440;
+    color: #edb634;
+}
+
+.box {
+    padding: 10px;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+h3 {
+    font-size: 0.8em;
+}
+
+h2 {
+    font-size: 1.1em;
+}
