@@ -23,7 +23,10 @@ h1 {
 body {
     font-family:'Hammersmith';
     text-align: center;
-    margin: 0px 50px;
+}
+
+main {
+    margin: 0px 20px;
 }
 
 #container {
@@ -49,7 +52,7 @@ main img {
     background-color: #D5C5B8;
 }
 
-#dark {
+.dark {
     background-color: #2C2440;
     color: #edb634;
 }
@@ -63,10 +66,18 @@ main img {
     border-radius: 20px;
 }
 
-h3 {
-    font-size: 0.8em;
+.p1 {
+    font-size: 1.1rem;
+    margin-bottom: 3px;
+    margin-top: 0px;
 }
 
-h2 {
-    font-size: 1.1em;
+.p2 {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    margin-top: 3px;
+}
+
+main p {
+
 }
