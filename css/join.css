@@ -110,7 +110,7 @@ main img {
     border-radius: 20px;
 }
 
-#info h2, #info ul, #info h3, #info p {
+#info h2, #info ul, #info p {
     padding: 0 20px;
 }
 
@@ -118,17 +118,20 @@ main img {
     padding-top: 20px;
 }
 
+#no-experience {
+    font-family: 'Hammersmith';
+    font-size: 1.17em;
+    padding: 5px 20px !important;
+}
+
 #info p {
     padding-bottom: 20px;
 }
 
-h2, h3 {
-    font-family: 'Hammersmith';
-    margin: 0;
-}
-
 h2 {
+    font-family: 'Hammersmith';
     font-size: 1.25em;
+    margin: 0;
 }
 
 main ul, main p {
