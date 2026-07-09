@@ -63,7 +63,7 @@
 }
 
 @media (width >= 1024px) {
-    main {
+    #main-content {
         margin-left: 50px;
         margin-right: 50px;
     }
@@ -95,7 +95,7 @@
 }
 
 @media (width < 1024px) {
-    main {
+    #main-content {
         margin-left: 10px;
         margin-right: 10px;
     }
@@ -154,13 +154,13 @@
         gap: 50px;
     }
 
-    main img {
+    #main-content img {
         width: 350px;
     }
 }
 
 @media (width < 768px) {
-    main img {
+    #main-content img {
         width: 300px;
     }
     
@@ -257,6 +257,11 @@
     }
 }
 
+#main-content {
+    display: flex;
+    flex-direction: column;
+}
+
 h1, h2 {
     background-color: #4A321B;
     color: #EDB634;
@@ -283,7 +288,7 @@ div {
     align-items: center;
 }
 
-main img {
+#main-content img {
     max-height: 400px;
     border-radius: 20px;
 }
