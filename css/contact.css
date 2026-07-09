@@ -41,6 +41,7 @@ main {
     gap: 20px;
     flex: 1;
     object-fit: cover;
+    margin-bottom: 20px;
 }
 
 main img {
@@ -57,6 +58,7 @@ main img {
     background-color: #2C2440;
     color: #edb634;
     height: 100%;
+    
 }
 
 .box {
@@ -112,4 +114,8 @@ main img {
 
 #youtube img {
     width: 150%;
+}
+
+p {
+    font-size: 1.5em
 }
