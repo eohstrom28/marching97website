@@ -104,7 +104,7 @@
         gap: 50px;
     }
 
-    #img-and-announcements div {
+    #img-and-announcements div, #announcements {
         flex: 1;
     }
 
