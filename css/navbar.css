@@ -24,9 +24,14 @@ nav {
     box-sizing: border-box;
 }
 
+#logo-link {
+    height: 50px;
+}
+
 #logo {
     width: 50px;
-    height: auto;
+    /* counteract how some pages round all image corners */
+    border-radius: 0;
 }
 
 nav ul {
@@ -82,7 +87,7 @@ nav button p {
     width: auto;
     padding: 5px;
     background-color: #EDB634;
-    border: solid 2px #2C2440;
+    border: none;
 }
 
 .hamburger img {
@@ -146,6 +151,19 @@ nav li:hover, nav li:focus-within {
     background-color: #604224;
     color: #F1F0E7;
     text-decoration: underline;
+}
+
+nav li button:focus, nav li a:focus {
+    /* not necessary since the background color change is the focus indicator */
+    outline: none;
+}
+
+#logo-link:focus, #logo-link:hover {
+    outline: solid #4A321B;
+}
+
+.hamburger:focus, .hamburger:hover {
+    outline: solid #2C2440;
 }
 
 @media (width >= 732px) {
