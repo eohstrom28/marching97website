@@ -55,6 +55,10 @@
     #first-leader {
         margin-bottom: 20px;
     }
+
+    .rank-leader {
+        flex-direction: column;
+    }
 }
 
 @media (width > 425px) {
