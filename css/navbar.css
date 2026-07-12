@@ -183,6 +183,7 @@ nav li button:focus, nav li a:focus {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 10px;
         height: fit-content;
         padding: 10px 0;
     }
@@ -194,6 +195,7 @@ nav li button:focus, nav li a:focus {
     nav ul {
         padding-inline-start: 0;
         flex-direction: column;
+        gap: 10px;
         height: fit-content;
         margin-block-start: 0;
         margin-block-end: 0;
