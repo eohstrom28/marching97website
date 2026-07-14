@@ -24,6 +24,20 @@ nav {
     box-sizing: border-box;
 }
 
+#skip-to-main {
+    background-color: #4A321B;
+    color: #EDB634;
+    /* opacity: 0; */
+    font-family: 'Hammer';
+    text-align: center;
+    position: absolute;
+    /* position far off-screen to the left */
+    left: -9999px;
+    /* make sure it's on top of other content */
+    z-index: 999;
+    padding: 10px;
+}
+
 #logo-link {
     height: 50px;
 }
@@ -133,6 +147,10 @@ nav button p {
     border-bottom: none;
 }
 
+#skip-to-main:focus {
+    opacity: 1;
+}
+
 /* highlight current page, except on index page (don't highlight Marching 97 logo) */
 [aria-current=page]:not(.no-highlight):hover, [aria-current=page]:not(.no-highlight):focus-within {
     background-color: #604224;
@@ -167,6 +185,11 @@ nav li button:focus, nav li a:focus {
 }
 
 @media (width >= 732px) {
+    #skip-to-main:focus {
+        /* put the link in the top left corner */
+        left: 0;
+    }
+
     /* don't underline buttons to avoid them being confused for links */
     .nav-item:not(button) {
         text-decoration: inherit;
@@ -177,6 +200,12 @@ nav li button:focus, nav li a:focus {
     body {
         width: 100%;
         height: 100%;
+    }
+
+    #skip-to-main:focus {
+        /* center the link */
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     nav {
