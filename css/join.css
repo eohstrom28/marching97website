@@ -101,7 +101,8 @@ main img {
 #info, #contact {
     background-color: #D5C5B8;
     color: #2C2440;
-    display: flex;
+    padding: 10px;
+    display: flex; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
