@@ -75,7 +75,7 @@ main img {
     border-radius: 20px;
     color: #2C2440;
     padding: 10px;
-    display: flex;
+    display: flex; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
