@@ -1,15 +1,18 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		<meta charset="utf-8">
 		<title>Rank 3/12 | Marching 97</title>
 		<link rel="stylesheet" href="../../css/navbar.css">
 		<link rel="stylesheet" href="../../css/ranks.css">
         <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1">
+		<script src="../../js/navbar.js" defer></script>
 	</head>
 	
 	<body>
+		<a href="#main" id="skip-to-main">Skip to main content</a>
 		<nav>
-			<a href="../../index.html"><img src="../../assets/logo.png" alt="Marching 97 logo, to the homepage" id="logo"></a>
+			<a href="../../index.html" id="logo-link"><img src="../../assets/logo.png" alt="Marching 97 logo, to the homepage" id="logo"></a>
 			<ul>
 				<li class="has-dropdown current about">
 					<button class="nav-item about"aria-label="submenu of About Us" aria-expanded="false">About Us<p class="about" aria-hidden="true"> &#9660</p></button>
@@ -47,24 +50,22 @@
 				<li><a href="../../join.html" class="nav-item">Join!</a></li>
 			</ul>
 			<!-- Image attribution: Floydian.pulse, CC0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Hamburger-.svg) -->
-            <button class="hamburger" aria-hidden="true"><img src="../../assets/hamburger-icon.svg" alt="hamburger icon, toggle navigation bar"></button>
+            <button class="hamburger" aria-hidden="true"><img src="../../assets/hamburger-icon.svg" alt="Toggle navigation bar"></button>
 		</nav>
 
-		<main>
+		<main id="main">
 			<h1>Rank 3/12</h1>
 
-			<div class="text-and-images">
-				<div class="rank-text">
-					<div class="rank-info">
-						<p>The percussion section makes up Ranks 3 and 12, usually holding the honor of being the largest section in the 97. While far apart in
-							rank number, they're a close knit group in every other way, on and off the field. They're always eager to welcome new members or
-							bring enthusiasm and fun to rehearsals. It's debatable whether the drumline knows how to march any other move than directly forwards
-							or backwards or count beyond 4, but they have a cadence for every occasion and excel at making the rest of the band have to skip at
-							the most inconvenient moment possible. They also have the most dedication in using a blanket to throw a dink in the air and have it
-							land on their heads!</p>
-					</div>
+			<div id="text-and-images">
+				<div id="rank-text">
+					<p>The percussion section makes up Ranks 3 and 12, usually holding the honor of being the largest section in the 97. While far apart in
+						rank number, they're a close knit group in every other way, on and off the field. They're always eager to welcome new members or
+						bring enthusiasm and fun to rehearsals. It's debatable whether the drumline knows how to march any other move than directly forwards
+						or backwards or count beyond 4, but they have a cadence for every occasion and excel at making the rest of the band have to skip at
+						the most inconvenient moment possible. They also have the most dedication in using a blanket to throw a dink in the air and have it
+						land on their heads!</p>
 
-					<div class="rank-leader two-leaders">
+					<div id="first-leader" class="rank-leader">
 						<img class="rank-leader-img" src="../../assets/rank-photos/rank-leader-temp-name.png" alt="Rank Leader Christian Tedesco">
 						<div class="rank-leader-text">
 							<h2>Rank 3 Leader: Christian Tedesco '27</h2>
@@ -83,14 +84,12 @@
 					</div>
 				</div>
 			
-				<div class="photos">
-					<img src="../../assets/rank-photos/2025_rank_312_smiling.JPG" alt="Ranks 3 and 12 in two rows, smiling with their arms around each other">
-					<img src="../../assets/rank-photos/2025_rank_312_serious.JPG" alt="Ranks 3 and 12 in two rows with serious expressions on their faces">
-					<img src="../../assets/rank-photos/2025_rank_312_silly.JPG" alt="Ranks 3 and 12 pretending to be at a restaurant???">
-					<!-- add more photos later -->
+				<div id="photos">
+					<img src="../../assets/rank-photos/2025_rank_312_smiling.JPG" alt="Ranks 3 and 12 in two rows, smiling with their arms around each other.">
+					<img src="../../assets/rank-photos/2025_rank_312_serious.JPG" alt="Ranks 3 and 12 in two rows with serious expressions on their faces.">
+					<img src="../../assets/rank-photos/2025_rank_312_silly.JPG" alt="Ranks 3 and 12 pretending to be at a restaurant by using drum cases as tables and cymbals as plates.">
 				</div>
 			</div>
 		</main>
 	</body>
-	<script src="../../js/navbar.js"></script>
 </html>

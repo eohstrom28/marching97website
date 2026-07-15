@@ -1,14 +1,17 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		<meta charset="utf-8">
 		<title>Media | Marching 97</title>
 		<link rel="stylesheet" href="./css/navbar.css">
         <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1">
+		<script src="./js/navbar.js" defer></script>
 	</head>
 
 	<body>
+		<a href="#main" id="skip-to-main">Skip to main content</a>
 		<nav>
-			<a href="./index.html"><img src="./assets/logo.png" alt="Marching 97 logo, to the homepage" id="logo"></a>
+			<a href="./index.html" id="logo-link"><img src="./assets/logo.png" alt="Marching 97 logo, to the homepage" id="logo"></a>
 			<ul>
 				<li class="has-dropdown about">
 					<button class="nav-item about" aria-label="submenu of About Us" aria-expanded="false">About Us<p class="about" aria-hidden="true"> &#9660</p></button>
@@ -46,12 +49,11 @@
 				<li><a href="./join.html" class="nav-item">Join!</a></li>
 			</ul>
 			<!-- Image attribution: Floydian.pulse, CC0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Hamburger-.svg) -->
-            <button class="hamburger" aria-hidden="true"><img src="./assets/hamburger-icon.svg" alt="hamburger icon, toggle navigation bar"></button>
+            <button class="hamburger" aria-hidden="true"><img src="./assets/hamburger-icon.svg" alt="Toggle navigation bar"></button>
 		</nav>
 
-		<main>
+		<main id="main">
 			<h1>Photos from the 2025 Season</h1>
 		</main>
 	</body>
-	<script src="./js/navbar.js"></script>
 </html>

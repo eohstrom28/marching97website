@@ -1,15 +1,18 @@
 <!doctype html>
 <html lang="en">
 	<head>
+		<meta charset="utf-8">
 		<title>Home | Marching 97</title>
 		<link rel="stylesheet" href="./css/navbar.css">
 		<link rel="stylesheet" href="./css/style.css">
         <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1">
+		<script src="./js/navbar.js" defer></script>
 	</head>
 	
 	<body>
+		<a href="#main" id="skip-to-main">Skip to main content</a>
 		<nav>
-			<a href="./index.html" class="no-highlight" aria-current="page"><img src="./assets/logo.png" alt="Marching 97 logo, to the homepage" id="logo"></a>
+			<a href="./index.html" id="logo-link" class="no-highlight" aria-current="page"><img src="./assets/logo.png" alt="Marching 97 logo, to the homepage" id="logo"></a>
 			<ul>
 				<li class="has-dropdown about">
 					<button class="nav-item about" aria-label="submenu of About Us" aria-expanded="false">About Us<p class="about" aria-hidden="true"> &#9660</p></button>
@@ -47,88 +50,97 @@
 				<li><a href="./join.html" class="nav-item">Join!</a></li>
 			</ul>
 			<!-- Image attribution: Floydian.pulse, CC0, via Wikimedia Commons (https://commons.wikimedia.org/wiki/File:Hamburger-.svg) -->
-            <button class="hamburger" aria-hidden="true"><img src="./assets/hamburger-icon.svg" alt="hamburger icon, toggle navigation bar"></button>
+            <button class="hamburger" aria-hidden="true"><img src="./assets/hamburger-icon.svg" alt="Toggle navigation bar"></button>
 		</nav>
 
-		<main>
-			<h1>Lehigh University's Marching 97</h1>
+		<main id="main">
+			<div id="main-content">
+				<h1>Lehigh University's Marching 97</h1>
 
-			<div class="img-logo">
-				<img class="saxes" src="./assets/homepage/homepage_band_members_waving.jpg" alt="3 tenor saxophonists waving">
-				<img class="alt-logo" src="./assets/homepage/homepage_retro_logo.png" alt="The railroad version of the Marching 97 logo">
-			</div>
-
-			<h2>"The Finest Band East of All Points West!"</h2>
-
-			<div class="desc-socials-img">
-				<div class="desc-and-socials">
-					<div class="description">
-						<p>Welcome to Lehigh University's Marching 97, proudly known as one of the nation's only student-run marching
-							bands! Why are we called the 97? Historically, the band was made up of 12 ranks with 8 members each (for a total of 96 musicians)
-							plus a drum major, which brought them to 97 people. With increased interest in the band, we've since expanded to continue to allow
-							anyone to join, so we now have over 100 members!</p>
-						<p>Every time you see us, we have one goal: Spread as much psyche as possible! What is psyche, you ask? Only the very spirit that
-							makes the 97 as proud as it is! First formed in 1906 with small numbers, we continue to grow and welcome all those who enjoy
-							music and want to help us promote spirit around Lehigh's campus.</p>
+				<div id="img-and-logo">
+					<div>
+						<img src="./assets/homepage/homepage_band_members_waving.jpg" alt="3 tenor saxophonists waving">
 					</div>
-					
-					<div class="socials">
-						<h3>Find us on Social Media!</h3>
-						<div class="social-links">
-							<div class="social-link-group">
-								<a href="https://www.instagram.com/marching97/"><img src="./assets/social-media-logos/Instagram_Glyph_Gradient.png" alt="Instagram logo, to our Instagram account"></a>
-								<a href="https://www.facebook.com/lehighmarching97"><img src="./assets/social-media-logos/Facebook_Logo_Primary.png" alt="Facebook logo, to our Facebook account"></a>
-							</div>
-							<div class="social-link-group">
-								<a id="youtube" href="https://www.youtube.com/@Marching97Pubman/featured"><img src="./assets/social-media-logos/YouTube_icon_red_digital.png" alt="YouTube logo, to our YouTube channel"></a>
-								<a href="https://www.tiktok.com/@marching97"><img src="./assets/social-media-logos/TikTok_Social_Icon_Circle_White.png" alt="TikTok logo, to our TikTok account"></a>
-							</div>
-						</div>
+					<div>
+						<img src="./assets/homepage/homepage_retro_logo.png" alt="The railroad version of the Marching 97 logo">
 					</div>
 				</div>
+
+				<h2>"The Finest Band East of All Points West!"</h2>
+
+				<div id="desc-socials-img">
+					<div id="desc-and-socials">
+						<div id="description">
+							<p>Welcome to Lehigh University's Marching 97, proudly known as one of the nation's only student-run marching
+								bands! Why are we called the 97? Historically, the band was made up of 12 ranks with 8 members each (for a total of 96 musicians)
+								plus a drum major, which brought them to 97 people. With increased interest in the band, we've since expanded to continue to allow
+								anyone to join, so we now have over 100 members!</p>
+							<p>Every time you see us, we have one goal: Spread as much psyche as possible! What is psyche, you ask? Only the very spirit that
+								makes the 97 as proud as it is! First formed in 1906 with small numbers, we continue to grow and welcome all those who enjoy
+								music and want to help us promote spirit around Lehigh's campus.</p>
+						</div>
+						
+						<section id="socials">
+							<h3>Find us on Social Media!</h3>
+							<div id="social-links">
+								<div class="social-link-group">
+									<a href="https://www.instagram.com/marching97/"><img src="./assets/social-media-logos/Instagram_Glyph_Gradient.png" alt="Instagram logo, to our Instagram account"></a>
+									<a href="https://www.facebook.com/lehighmarching97"><img src="./assets/social-media-logos/Facebook_Logo_Primary.png" alt="Facebook logo, to our Facebook account"></a>
+								</div>
+								<div class="social-link-group">
+									<a id="youtube" href="https://www.youtube.com/@Marching97Pubman/featured"><img src="./assets/social-media-logos/YouTube_icon_red_digital.png" alt="YouTube logo, to our YouTube channel"></a>
+									<a href="https://www.tiktok.com/@marching97"><img src="./assets/social-media-logos/TikTok_Social_Icon_Circle_White.png" alt="TikTok logo, to our TikTok account"></a>
+								</div>
+							</div>
+						</section>
+					</div>
+					
+					<div id="description-img">
+						<img src="./assets/homepage/homepage_band_members_celebrating.png" alt="Marching 97 members celebrating">
+					</div>
+				</div>
+
+				<section id="upcoming">
+					<h3>Upcoming event:</h3>
+					<p>4-Day Band Camp! August 16-19, 2026</p>
+				</section>
+
+				<div id="img-and-announcements">
+					<div id="announcements-img">
+						<img src="./assets/homepage/homepage_alumni_parade.jpg" alt="Marching 97 alumni marching and singing alongside a little girl with a trombone">
+					</div>
+
+					<section id="announcements">
+						<h3>Executive Board Announcements</h3>
+						<p>Hey Bnad,</p>
+						<p>I hope y'all are having a good summer thus far. Here are some key updates:</p>
+						<p>Alumni Reunion is June 13th! If you are on campus or in the local area on Saturday, June 13th come play at Alumni Reunion!
+							There will be free food! If you are a rising senior, you also get a free Alumni Flame shirt! Remember to wear flame attire.</p>
+					</section>
+				</div>
 				
-				<img src="./assets/homepage/homepage_band_members_celebrating.png" alt="Marching 97 members celebrating">
-			</div>
+				<div id="end-links">
+					<div class="link-group">
+						<p>Want to support the 97?</p>
+						<a href="https://securelb.imodules.com/s/1127/g20/form.aspx?sid=1127&gid=1&pgid=5310&cid=9528&dids=108.198.199&bledit=1&sort=1">Donate!</a>
+					</div>
 
-			<div class="upcoming">
-				<h3>Upcoming event:</h3>
-				<p>4-Day Band Camp! August 16-19, 2026</p>
-			</div>
-
-			<div class="img-and-announcements">
-				<img src="./assets/homepage/homepage_alumni_parade.jpg" alt="Marching 97 alumni marching and singing alongside a little girl with a trombone">
-
-				<div class="announcements">
-					<h3>Executive Board Announcements</h3>
-					<p>Hey Bnad,</p>
-					<p>I hope y'all are having a good summer thus far. Here are some key updates:</p>
-					<p>Alumni Reunion is June 13th! If you are on campus or in the local area on Saturday, June 13th come play at Alumni Reunion!
-						There will be free food! If you are a rising senior, you also get a free Alumni Flame shirt! Remember to wear flame attire.</p>
+					<div class="link-group">
+						<p>Interested?</p>
+						<a href="./join.html">Join Us!</a>
+					</div>
+					<div class="link-group">
+						<p>Questions or Concerns?</p>
+						<a href="./contact.html">Contact Us!</a>
+					</div>
 				</div>
 			</div>
 			
-			<div class="links">
-				<div class="link-group">
-					<p>Want to support the 97?</p>
-					<a href="https://securelb.imodules.com/s/1127/g20/form.aspx?sid=1127&gid=1&pgid=5310&cid=9528&dids=108.198.199&bledit=1&sort=1">Donate!</a>
-				</div>
-
-				<div class="link-group">
-					<p>Interested?</p>
-					<a href="./join.html">Join Us!</a>
-				</div>
-				<div class="link-group">
-					<p>Questions or Concerns?</p>
-					<a href="./contact.html">Contact Us!</a>
-				</div>
-			</div>
+			<img id="full-band-img" src="./assets/homepage/homepage_full_band_photo.png" alt="">
 		</main>
-
-		<img class="full-band" src="./assets/homepage/homepage_full_band_photo.png" alt="The entire Marching 97 being silly in uniform">
 		
 		<footer>
 			<p>Shoutout for contributing to the website: Mia Emery '29, Emily Forlizzi '29, Oliver Krejbich '28, Alex Margulies '26, Emile Ohstrom '28, and Mailei Schechterly '27</p>
 		</footer>
 	</body>
-	<script src="./js/navbar.js"></script>
 </html>
