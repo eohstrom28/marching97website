@@ -43,13 +43,32 @@ main {
     flex: 1;
 }
 
-#left, #middle {
-    gap: 20px;
+#left {
+    background-color: #2C2440;
+    color: #edb634;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 20px;
 }
 
-main img {
-    width: 100%;
-    border-radius: 20px;
+.exec-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+#left p {
+    margin: 0;
+}
+
+.name {
+    font-size: 1.2em;
+}
+
+#middle, #right {
+    gap: 20px;
 }
 
 #middle {
@@ -122,28 +141,9 @@ main img {
     width: 150%;
 }
 
-#right {
-    background-color: #2C2440;
-    color: #edb634;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
+main img {
+    width: 100%;
     border-radius: 20px;
-}
-
-.exec-info {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-#right p {
-    margin: 0;
-}
-
-.name {
-    font-size: 1.2em;
 }
 
 #alumni-box {
