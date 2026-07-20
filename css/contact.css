@@ -24,11 +24,19 @@
     .social-link-group {
         gap: 5%;
     }
+
+    #right {
+        justify-content: space-between;
+    }
 }
 
 @media (width < 1200px) {
     #three-sections {
         flex-direction: column;
+    }
+
+    #right {
+        align-items: center;
     }
 }
 
@@ -44,6 +52,10 @@
 
     .social-link-group {
         gap: 20px;
+    }
+
+    #right img {
+        width: 75%;
     }
 }
 
@@ -130,7 +142,7 @@ h1 {
 #left {
     background-color: #2C2440;
     color: #edb634;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     gap: 10px;
     padding: 10px;
