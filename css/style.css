@@ -19,49 +19,6 @@
     font-style: normal;
 }
 
-@media (width < 1232px) and (width >= 1121px) {
-    #socials {
-        padding: 20px 30px;
-    }
-    
-    #social-links {
-        gap: 30px;
-    }
-
-    .social-link-group {
-        gap: 30px;
-    }
-}
-
-@media (width < 1121px) and (width >= 1024px) {
-    #socials {
-        padding: 20px 10px;
-    }
-    
-    #social-links {
-        gap: 10px;
-    }
-
-    .social-link-group {
-        gap: 10px;
-    }
-}
-
-
-@media (width >= 1232px) or ((width <= 850px) and (width >= 750px)) {
-    #socials {
-        padding: 20px 50px;
-    }
-
-    #social-links {
-        gap: 50px;
-    }
-
-    .social-link-group {
-        gap: 50px;
-    }
-}
-
 @media (width >= 1024px) {
     #main-content {
         margin-left: 50px;
@@ -89,6 +46,14 @@
         justify-content: space-between;
         align-items: stretch;
         flex: 2;
+    }
+    
+    #social-links {
+        gap: 10px;
+    }
+
+    .social-link-group {
+        gap: 10px;
     }
 
     #description-img {
@@ -138,17 +103,17 @@
     }
 }
 
-@media (width < 1024px) and (width >= 950px) {
-    #socials {
-        padding: 20px 85px;
+@media (width < 1024px) and (width >= 550px) {
+    #img-and-logo img {
+        width: 70%;
     }
     
     #social-links {
-        gap: 85px;
+        gap: 20px;
     }
 
     .social-link-group {
-        gap: 85px;
+        gap: 20px;
     }
 }
 
@@ -159,26 +124,6 @@
 
     #img-and-announcements img {
         width: 75%;
-    }
-}
-
-@media (width < 1024px) and (width >= 768px) {
-    #img-and-logo img {
-        width: 70%;
-    }
-}
-
-@media (width < 950px) and (width >= 850px) {
-    #socials {
-        padding: 20px 70px;
-    }
-    
-    #social-links {
-        gap: 70px;
-    }
-
-    .social-link-group {
-        gap: 70px;
     }
 }
 
@@ -197,7 +142,7 @@
 
     #end-links {
         flex-direction: column;
-        gap: 10px;
+        gap: 20px;
     }
 
     #full-band-img {
@@ -215,51 +160,21 @@
     }
 }
 
-@media (width < 750px) and (width >= 650px) { 
-    #socials {
-        padding: 20px 30px;
-    }
-
-    #social-links {
-        gap: 30px;
-    }
-
+@media (width >= 550px) {
     .social-link-group {
-        gap: 30px;
-    }
-}
-
-@media (width < 650px) and (width >= 550px) { 
-    #socials {
-        padding: 10px;
-    }
-
-    #social-links {
-        gap: 10px;
-    }
-
-    .social-link-group {
-        gap: 10px;
+        justify-content: space-around;
     }
 }
 
 @media (width < 550px) {
     #social-links {
         flex-direction: column;
-    }
-}
-
-@media (width < 550px) and (width >= 482px) {
-    #socials {
-        padding: 10px 75px;
-    }
-
-    #social-links {
         gap: 20px;
     }
 
     .social-link-group {
-        gap: 75px;
+        justify-content: space-evenly;
+        gap: 20px;
     }
 }
 
@@ -274,35 +189,6 @@
 
     #img-and-announcements img {
         width: 100%;
-    }
-}
-
-@media (width < 482px) and (width >= 406px) {
-    #socials {
-        padding: 10px 50px;
-    }
-
-    #social-links {
-        gap: 20px;
-    }
-
-    .social-link-group {
-        gap: 50px;
-    }
-}
-
-@media (width < 406px) {
-    #socials {
-        padding: 10px 20px;
-    }
-
-    #social-links {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .social-link-group {
-        gap: 20px;
     }
 }
 
@@ -328,13 +214,15 @@ h1 {
     font-size: 2.5em;
 }
 
-div {
+#img-and-logo {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-#img-and-logo {
-    align-items: center;
+#img-and-logo div {
+    display: flex;
+    justify-content: center;
 }
 
 #main-content img {
@@ -346,11 +234,15 @@ h2 {
 }
 
 #desc-socials-img {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
 #desc-and-socials {
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -360,6 +252,7 @@ h2 {
     font-family: 'Josefin';
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 20px;
     padding: 20px 0;
     margin: 0;
@@ -375,10 +268,11 @@ h2 {
     background-color: #4A321B;
     color: #EDB634;
     font-family: 'Hammersmith';
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-evenly;
     gap: 10px;
+    padding: 20px;
     border-radius: 20px;
 }
 
@@ -392,16 +286,24 @@ h3 {
 
 #social-links {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: stretch;
 }
 
 .social-link-group {
+    display: flex;
     flex: 1;
 }
 
-#social-links a {
+#socials a {
+    background-color: #604429;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 1;
+    padding: 20px;
+    max-width: 100px;
+    border-radius: 20px;
 }
 
 #social-links img {
@@ -412,29 +314,18 @@ main a {
     font-size: larger;
 }
 
-#socials a {
-    background-color: #604429;
+#description-img {
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 20px;
-    border-radius: 20px;
-    font-size: 0;
-}
-
-#youtube {
-    padding: 0px 20px !important;
-}
-
-#youtube img {
-    width: 150%;
 }
 
 #upcoming {
     text-align: center;
     background-color: #FCD55D;
     color: #2C2440;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 10px;
     padding: 10px;
     margin: 24px 0;
@@ -449,14 +340,23 @@ main a {
 }
 
 #img-and-announcements {
+    display: flex;
+    justify-content: center;
     align-items: center;
+}
+
+#announcements-img {
+    display: flex;
+    justify-content: center;
 }
 
 #announcements {
     background-color: #4A321B;
     color: #EDB634;
     text-align: center;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 20px;
     border-radius: 20px;
 }
@@ -467,14 +367,18 @@ main a {
 }
 
 #end-links {
-    margin-top: 24px;
-    margin-bottom: 24px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .link-group {
     background-color: #FCD55D;
     text-align: center;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     flex: 1;
     gap: 10px;
