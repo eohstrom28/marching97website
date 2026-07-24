@@ -170,7 +170,7 @@ h2 {
 }
 
 #current-director img {
-    border-radius: 10%;
+    border-radius: 30px;
     object-fit: cover;
 }
 
