@@ -43,6 +43,10 @@
         flex: 1;
     }
 
+    .img-fact-group figure {
+        align-self: stretch;
+    }
+
     #fifty-and-subway img {
         width: 75%;
     }
@@ -59,6 +63,10 @@
 @media (width < 1024px) and (width >= 550px) {
     .img-fact-group figure, .img-fact-group section {
         flex: 1;
+    }
+
+    .img-fact-group section {
+        align-self: center;
     }
 }
 
@@ -226,6 +234,7 @@ figcaption {
 
 .fun-fact p {
     font-family: 'Josefin';
+    margin-top: 0;
 }
 
 #timeline-and-photos {
