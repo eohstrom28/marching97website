@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Germania';
+    src: url('../assets/fonts/GermaniaOne-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@media (width >= 768px) {
+    .photo-row img {
+        width: 30%;
+    }
+}
+
+@media (width < 768px) {
+    .photo-row {
+        flex-direction: column;
+    }
+
+    .photo-row img {
+        width: 100%;
+    }
+}
+
+main {
+    margin: 20px;
+}
+
+h1 {
+    color: #edb634;
+    /* heading border */
+    -webkit-text-stroke: 0.5px #4A321B;
+    font-family: 'Germania';
+    text-align: center;
+    font-size: 2.5em;
+}
+
+#photos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.photo-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.photo-row img {
+    flex: 1;
+    border-radius: 20px;
+}
