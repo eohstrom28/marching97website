@@ -187,17 +187,17 @@ parents.forEach((parent) => {
         }
     });
 
-        parent.addEventListener("mouseenter", () => {
-            if (window.innerWidth >= 732) {
-                expand(parent);
-            }
-        });
+    parent.addEventListener("mouseenter", () => {
+        if (window.innerWidth >= 732) {
+            expand(parent);
+        }
+    });
 
-        parent.addEventListener("mouseleave", () => {
-            if (window.innerWidth >= 732) {
-                collapse(parent);
-            }
-        });
+    parent.addEventListener("mouseleave", () => {
+        if (window.innerWidth >= 732) {
+            collapse(parent);
+        }
+    });
 
     // for keyboard-accessibility
     button.addEventListener("keydown", (event) => {
@@ -218,7 +218,7 @@ parents.forEach((parent) => {
     if (subMenuTabs.length) {
         let lastTab = subMenuTabs[subMenuTabs.length - 1];
 
-        // if we're in the About dropdown, lastTab should be the Meet the Band button, not the Rank 13 link
+        // if we're in the About dropdown, lastTab should be the Meet the Band button, not the last rank
         if (parent.classList.contains("about")) {
             lastTab = document.querySelector("button.meet");
         }
