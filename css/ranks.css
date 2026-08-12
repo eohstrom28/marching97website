@@ -30,6 +30,10 @@
     #main-content {
         flex-direction: column;
     }
+
+    #text-and-images {
+        flex-direction: column;
+    }
 }
 
 @media (width < 1024px) and (width >= 768px) {
