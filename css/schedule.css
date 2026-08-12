@@ -19,16 +19,14 @@
     font-style: normal;
 }
 
-@media (width >= 768px) {
+@media (width >= 620px) {
     main ul {
-        margin-left: 5%;
-        margin-right: 5%;
-        margin-bottom: 20px;
+        max-width: 600px;
     }
 }
 
-@media (width < 768px) {
-    main ul {
+@media (width < 620px) {
+    #main-content {
         margin-left: 10px;
         margin-right: 10px;
         margin-bottom: 10px;
@@ -45,6 +43,13 @@ h1 {
     margin-bottom: 20px;
 }
 
+#main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 main ul {
     list-style-type: none;
     display: flex;
@@ -52,28 +57,25 @@ main ul {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    width: 100%;
     padding-inline-start: 0px;
     margin-top: 0;
 }
 
 main li {
     font-family: 'Josefin';
-    text-align: center;
-    white-space: pre;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    gap: 5px;
+    gap: 20px;
     width: 100%;
-    min-height: 32px;
     padding: 10px 20px 5px;
     box-sizing: border-box;
     border-radius: 30px;
 }
 
 .star {
-    height: 15px;
-    margin-bottom: 5px;
+    height: 12px;
 }
 
 main li p {
@@ -91,10 +93,35 @@ main li p {
 }
 
 #small-box {
-    text-align: center;
     display: flex;
     align-items: center;
     border-radius: 30px;
     justify-content: center;
     max-width: 250px;
+}
+
+#center {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.left, .right {
+    flex: 1;
+}
+
+.left {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.italic {
+    font-style: italic;
 }
