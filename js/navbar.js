@@ -114,7 +114,6 @@ const collapse = (parent) => {
     }
 };
 
-// edit to be event listener for navbar only?
 document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && lastExpanded) {
         collapse(lastExpanded);
