@@ -137,7 +137,10 @@
 @media (width < 768px) {
     #img-and-logo {
         flex-direction: column;
-        gap: 20px;
+    }
+
+    #railroad-logo {
+        display: none;
     }
 
     #end-links {
