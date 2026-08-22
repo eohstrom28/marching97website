@@ -20,6 +20,10 @@
 }
 
 @media (width >= 1024px) {
+    #main-content {
+        gap: 50px;
+    }
+
     #img-and-desc {
         gap: 20px;
     }
@@ -31,6 +35,7 @@
     #imgs-and-facts {
         justify-content: space-around;
         align-items: stretch;
+        gap: 50px;
     }
 
     .img-fact-group {
@@ -71,6 +76,10 @@
 }
 
 @media (width < 1024px) {
+    #main-content {
+        gap: 20px;
+    }
+
     #img-and-desc {
         flex-direction: column;
         gap: 20px;
@@ -80,6 +89,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 20px;
     }
 
     .img-fact-group {
@@ -147,10 +157,9 @@ h1 {
     text-align: center;
 }
 
-#container {
+#main-content {
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
 #img-and-desc {
@@ -208,7 +217,6 @@ figcaption {
 
 #imgs-and-facts {
     display: flex;
-    gap: 20px;
 }
 
 .img-fact-group {
