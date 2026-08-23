@@ -11,6 +11,12 @@ body {
     background-color: #AA8A71;
 }
 
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
