@@ -13,8 +13,11 @@
 }
 
 @media (width >= 1200px) {
-    main {
-        margin: 0 20px 20px;
+    #main-content {
+        margin-left: auto;
+        margin-bottom: 20px;
+        margin-right: auto;
+        max-width: 1200px;
     }
 
     #social-links {
@@ -41,7 +44,7 @@
 }
 
 @media (width < 1200px) and (width >= 768px) {
-    main {
+    #main-content {
         margin: 0 50px 20px;
     }
 
@@ -78,7 +81,7 @@
 }
 
 @media (width < 768px) and (width >= 500px) {
-    main {
+    #main-content {
         margin: 0 50px 20px;
     }
 
@@ -92,7 +95,7 @@
 }
 
 @media (width < 500px) {
-    main {
+    #main-content {
         margin: 0 10px 10px;
     }
 
@@ -109,6 +112,12 @@
 body {
     font-family: 'Hammersmith';
     text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {

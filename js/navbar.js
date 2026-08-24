@@ -251,8 +251,8 @@ const toggleHamburger = () => {
         // hide links from screen readers
         mainLinks.setAttribute("aria-hidden", "true");
 
-        nav.style.flexDirection = "row";
         nav.style.justifyContent = "space-between";
+        // nav.style.alignItems = "center";
         nav.style.padding = "10px";
 
         hamburger.setAttribute("aria-expanded", "false");
@@ -275,9 +275,8 @@ const toggleHamburger = () => {
         // show links to screen readers
         mainLinks.setAttribute("aria-hidden", "false");
 
-        nav.style.flexDirection = "column";
         nav.style.justifyContent = "center";
-        nav.style.padding = "10px 0";
+        nav.style.alignItems = "flex-start";
 
         hamburger.setAttribute("aria-expanded", "true");
     }
@@ -315,9 +314,10 @@ window.addEventListener("resize", () => {
 
         mainLinks.style.display = "flex";
 
-        nav.style.flexDirection = "column";
+        mainLinks.style.flexDirection = "column";
         nav.style.justifyContent = "center";
-        nav.style.padding = "10px 0";
+        nav.style.alignItems = "flex-start";
+        nav.style.padding = "10px";
 
         // show hamburger button to screen readers
         hamburger.setAttribute("aria-hidden", "false");
@@ -363,7 +363,7 @@ window.addEventListener("resize", () => {
         // show links to screen readers
         mainLinks.setAttribute("aria-hidden", "false");
 
-        nav.style.flexDirection = "row";
+        mainLinks.style.flexDirection = "row";
         nav.style.justifyContent = "space-between";
         nav.style.padding = "10px";
 
