@@ -20,7 +20,7 @@ header {
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     background-color: #F1F0E7;
     color: #2C2440;
     height: 100%;
@@ -225,7 +225,6 @@ nav li button:focus, nav li a:focus {
     }
 
     nav {
-        align-items: center;
         gap: 10px;
         height: fit-content;
         padding: 10px 0;
@@ -236,6 +235,7 @@ nav li button:focus, nav li a:focus {
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
+        gap: 10px;
     }
 
     nav ul {
