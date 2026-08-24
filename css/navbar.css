@@ -107,6 +107,7 @@ nav button p {
     width: auto;
     padding: 5px;
     background-color: #EDB634;
+    font-family: 'Hammer';
     border: none;
 }
 
@@ -224,7 +225,10 @@ nav li button:focus, nav li a:focus {
     }
 
     .hamburger {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
     }
 
     nav ul {
