@@ -22,6 +22,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     background-color: #F1F0E7;
+    color: #2C2440;
     height: 100%;
     width: 100%;
     padding: 10px;
@@ -45,7 +46,11 @@ nav {
 }
 
 #logo-link {
-    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #2C2440;
+    font-size: small;
 }
 
 #logo {
@@ -70,6 +75,10 @@ nav ul {
 
 .current, [aria-current=page] {
     color: #604224;
+}
+
+.no-highlight[aria-current=page] {
+    color: #604224 !important;
 }
 
 nav li {
