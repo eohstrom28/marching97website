@@ -216,8 +216,6 @@ nav li button:focus, nav li a:focus {
     }
 
     nav {
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
         gap: 10px;
         height: fit-content;
