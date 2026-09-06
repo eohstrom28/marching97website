@@ -19,46 +19,37 @@
         margin-right: auto;
         max-width: 1200px;
     }
-
-    #social-links {
-        gap: 2.5%;
-    }
-
-    .social-link-group {
-        gap: 5%;
-    }
-
-    #right {
-        justify-content: space-between;
-    }
-}
-
-@media (width < 1200px) {
-    #three-sections {
-        flex-direction: column;
-    }
-
-    #right {
-        align-items: center;
-    }
 }
 
 @media (width < 1200px) and (width >= 768px) {
     #main-content {
         margin: 0 50px 20px;
     }
+}
+
+@media (width >= 900px) {
+    .exec-info {
+        width: 30%;
+    }
+
+    #socials {
+        max-width: 75%;
+    }
 
     #social-links {
+        gap: 20px;
+    }
+}
+
+@media (width < 900px) {
+    #execs {
         flex-direction: column;
-        gap: 20px;
     }
+}
 
-    .social-link-group {
-        gap: 20px;
-    }
-
-    #right img {
-        width: 75%;
+@media (width < 900px) and (width >= 768px) {
+    .exec-info {
+        width: 50%;
     }
 }
 
@@ -67,22 +58,20 @@
         margin-top: 20px;
         margin-bottom: 20px;
     }
+
+    .social-link-group {
+        gap: 20px;
+    }
 }
 
 @media (width < 768px) {
-    #left-and-middle {
+    #links-img {
         flex-direction: column;
     }
 
     #lehigh-links h2, #lehigh-links p {
         margin-top: 10px;
         margin-bottom: 10px;
-    }
-}
-
-@media (width < 768px) and (width >= 500px) {
-    #main-content {
-        margin: 0 50px 20px;
     }
 
     #social-links {
@@ -91,6 +80,22 @@
 
     .social-link-group {
         gap: 20px;
+    }
+}
+
+@media (width < 768px) and (width >= 500px) {
+    .exec-info {
+        width: 90%;
+    }
+    
+    #main-content {
+        margin: 0 50px 20px;
+    }
+}
+
+@media (width < 650px) {
+    #social-links {
+        flex-direction: column;
     }
 }
 
@@ -99,13 +104,9 @@
         margin: 0 10px 10px;
     }
 
-    #social-links {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .social-link-group {
-        gap: 20px;
+    .exec-info {
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 
@@ -129,58 +130,60 @@ h1 {
     font-size: 2.5em;
 }
 
-#three-sections {
-    display: flex;
-    align-items: stretch;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-
-#left-and-middle {
-    display: flex;
-    flex: 2;
-    gap: 20px;
-}
-
-#left, #middle, #right {
+#main-content {
     display: flex;
     flex-direction: column;
-    flex: 1;
+    gap: 50px;
 }
 
-#left {
-    background-color: #2C2440;
-    color: #edb634;
-    justify-content: space-evenly;
+#execs {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
-    padding: 10px;
-    border-radius: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .exec-info {
+    background-color: #2C2440;
+    color: #edb634;
     display: flex;
     flex-direction: column;
     gap: 5px;
+    min-width: fit-content;
+    padding: 20px;
+    border-radius: 20px;
 }
 
-#left p {
+#execs p {
     margin: 0;
 }
 
-.name {
-    font-size: 1.2em;
+.role {
+    font-size: 1.3em;
 }
 
-#middle, #right {
-    gap: 20px;
-}
-
-#middle {
+#bottom {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    gap: 20px;
+}
+
+#links-img-socials {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#links-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 
 #lehigh-links {
@@ -190,6 +193,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex: 1;
     width: 100%;
     box-sizing: border-box;
     padding: 10px;
@@ -200,6 +204,17 @@ h1 {
     font-size: 1.25em;
 }
 
+#psyche-run {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+/* #psyche-run img {
+    max-width: 75%;
+} */
+
 #socials {
     background-color: #D5C5B8;
     color: #2C2440;
@@ -208,6 +223,7 @@ h1 {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    flex: 1;
     box-sizing: border-box;
     width: 100%;
     padding: 10px;
@@ -215,10 +231,13 @@ h1 {
 }
 
 #socials a {
+    background-color: #604429;
     display: flex;
     justify-content: center;
     align-items: center;
     max-width: 100px;
+    padding: 20px;
+    border-radius: 20px;
 }
 
 #social-links {
@@ -230,7 +249,7 @@ h1 {
 .social-link-group {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: stretch;
     flex: 1;
 }
 
@@ -255,6 +274,8 @@ main img {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    box-sizing: border-box;
+    width: 100%;
     padding: 20px;
     border-radius: 20px;
 }
