@@ -1,0 +1,2 @@
+# Prevent Apache from serving the Git repository to the public web
+RedirectMatch 404 /\.git
