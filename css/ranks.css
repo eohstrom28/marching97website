@@ -170,6 +170,7 @@ main img  {
     justify-content: space-evenly;
     align-items: center;
     gap: 20px;
+    height: stretch;
 }
 
 #photos img {
