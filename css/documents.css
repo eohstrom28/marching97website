@@ -35,7 +35,7 @@
     }
 }
 
-@media (width >= 768px) {
+@media (width >= 768px) and (width <= 1250px) {
    #main-content {
         margin: 0 50px 20px;
     } 
